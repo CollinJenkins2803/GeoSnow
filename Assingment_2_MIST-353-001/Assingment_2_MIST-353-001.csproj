@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Content Include="Pages\Index.cshtml.cs" />
+    <Content Include="README.md" />
   </ItemGroup>
 
 </Project>
