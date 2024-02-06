@@ -63,4 +63,5 @@ For this assignment:
 >https://github.com/codewithsadee/tourest: Custom CSS that I altered in order to use WVU brand RGB 
 >
 >https://openai.com/chatgpt: used to help customize css for Searchbar; "make custom css to make my Searchbar 18px"
+
  **Reflection on Resources**:
