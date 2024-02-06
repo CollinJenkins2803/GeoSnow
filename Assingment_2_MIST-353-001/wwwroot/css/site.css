@@ -632,38 +632,6 @@ body {
 
 
 /*-----------------------------------*\
-  #GO TO TOP
-\*-----------------------------------*/
-
-.go-top {
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    background: var(--WVU-gold);
-    color: var(--white-1);
-    font-size: 20px;
-    padding: 10px;
-    border-radius: var(--radius-6);
-    visibility: hidden;
-    opacity: 0;
-    transition: var(--transition-1);
-}
-
-    .go-top.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(-15px);
-    }
-
-    .go-top:is(:hover, :focus) {
-        transform: translateY(-25px);
-    }
-
-
-
-
-
-/*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
 
