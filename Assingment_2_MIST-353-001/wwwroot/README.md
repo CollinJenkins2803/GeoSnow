@@ -60,4 +60,5 @@ For this assignment:
 >
 >https://www.markdownguide.org/basic-syntax/: .md syntax help
 >
+>https://github.com/codewithsadee/tourest: Custom CSS that I altered in order to use WVU brand RGB 
  **Reflection on Resources**:
