@@ -124,9 +124,11 @@ html {
 }
 
 body {
-    background: var(--white-1);
+    background-image: url(https://wallpaperaccess.com/full/133707.jpg);
+    background-repeat: no-repeat;
     font-size: 1.6rem;
 }
+
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -207,7 +209,7 @@ body {
 }
 
 .h2 {
-    color: var(--jet);
+    color: var(--WVU-gold);
     font-size: var(--fs-3);
     font-weight: var(--fw-500);
 }
@@ -215,6 +217,7 @@ body {
 .h3 {
     font-size: var(--fs-4);
     font-weight: var(--fw-400);
+    color: var(--WVU-gold);
 }
 
 .section-title {
@@ -269,7 +272,7 @@ body {
 }
 
     .card-badge ion-icon {
-        --ionicon-stroke-width: 60px;
+        --ion-icon-stroke-width: 60px;
         font-size: 20px;
         margin-inline: auto;
     }
@@ -352,7 +355,7 @@ body {
 .nav-toggle-btn ion-icon {
     color: var(--WVU-gold);
     font-size: 35px;
-    --ionicon-stroke-width: 40px;
+    --ion-icon-stroke-width: 40px;
 }
 
 .navbar {
@@ -400,6 +403,7 @@ body {
 .hero {
     background-repeat: no-repeat, no-repeat;
     background-position: bottom left, top right;
+    
 }
 
 .hero-content {
@@ -411,7 +415,7 @@ body {
 }
 
 .hero-title {
-    color: var(--eerie-black);
+    color: var(--WVU-gold);
     font-size: var(--fs-1);
     font-family: var(--ff-abril-fatface);
     font-weight: var(--fw-500);
@@ -421,7 +425,7 @@ body {
 }
 
 .hero-text {
-    color: var(--WVU-blue);
+    color: var(--WVU-gold);
     font-size: var(--fs-7);
     line-height: 1.7;
     margin-bottom: 15px;
@@ -435,7 +439,7 @@ body {
 
 
 /*-----------------------------------*\
-  #SEARCHBAR
+  #SEARCH BAR
 \*-----------------------------------*/
 #locationForm {
     /* Example styles from Chat-GPT */
@@ -506,7 +510,29 @@ body {
     font-weight: var(--fw-600);
     margin-bottom: 5px;
 }
-
+.section.about .container {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap onto the next line on small screens */
+    align-items: center; /* Vertically aligns the items if they're not the same height */
+    justify-content: space-between; /* Adds space between the content and video */
+  }
+  
+  .about-content {
+    flex: 1; /* Allows the content to grow and shrink as needed */
+    padding-right: 20px; /* Adds some space between the content and the video */
+  }
+  
+  .about-video {
+    flex: 2; /* Allows the video to grow and shrink as needed */
+    /* Remove the width and height attributes from the HTML tag to control via CSS */
+    max-width: none; 
+  }
+  
+  .about-video video {
+    width: 100%; /* Makes the video responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
 
 
 
