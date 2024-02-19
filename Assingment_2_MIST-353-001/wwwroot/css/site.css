@@ -388,8 +388,17 @@ body {
         border-color: var(--white-1);
     }
 
+.navbar-brand{
+    
+    
+    display: flex;
+    
 
-
+}
+.navbar-brand img{
+    width: auto;
+    height: auto;
+}
 
 
 /*-----------------------------------*\
