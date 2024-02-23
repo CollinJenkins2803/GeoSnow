@@ -137,53 +137,51 @@ body {
       </section>
       
  </main>     
- <!--
-     - #SEARCHBAR
- -->
-    <form id="locationForm" action="/searchResults">
+ <!-- Search Bar -->
+<form id="locationForm" action="/searchResults" class="search-form">
 
-        <i class="fa-solid fa-location-arrow"></i>
-
-        <input type="text" id="locInp" name="location" class="form-control" placeholder="Where are you going?" style="font-size: 18px;" />
-
-       
-        <label for="startDateInp">Start Date</label>
-
-       <input type="date" id="startDateInp" name="checkIn" />
-       
-       <label for="endDateInp" class="form-label">End Date</label>
-      
-       <input type="date" id="endDateInp" name="checkOut" />
-        
-       <label for="trvDrop">Travelers?</label>
-       
-       <select name="trvDrop">
-            
-           <option value="1">1 traveler</option>
-            
-           <option value="2">2 travelers</option>
-            
-           <option value="3">3 travelers</option>
-      
-       </select>
-        
-       <input type="number" id="latTxt" step="any" name="latitude" />
-        
-       <input type="number" id="longTxt" step="any" name="longitude" />
-       
-       <input type="submit" id="submitBtn" value="Search" class="btn btn-primary" />
-    
-   </form>
-    
-   <button id="locBtn" onclick="getLocation()"><i class="fa fa-location-arrow"></i></button>
-
-    <div id="results">
+    <div class="input-group">
+        <span class="input-group-text"><i class="fa-solid fa-location-arrow"></i></span>
+        <input type="text" id="locInp" name="location" class="form-control" placeholder="Where are you going?" aria-label="Location">
     </div>
 
+    <div class="date-input-group">
+        <label for="startDateInp" class="form-label">Start Date</label>
+        <input type="date" id="startDateInp" name="checkIn" class="form-control">
+        
+        <label for="endDateInp" class="form-label">End Date</label>
+        <input type="date" id="endDateInp" name="checkOut" class="form-control">
+    </div>
 
-    <script type="module">
-        addLocationFormListen()
-    </script>
+    <div class="select-group">
+        <label for="trvDrop" class="form-label">Travelers?</label>
+        <select name="trvDrop" id="trvDrop" class="form-select">
+            <option value="1">1 traveler</option>
+            <option value="2">2 travelers</option>
+            <option value="3">3 travelers</option>
+            <option value="3">4 travelers</option>
+            <option value="3">5 travelers</option>
+
+        </select>
+    </div>
+
+    <input type="hidden" id="latTxt" step="any" name="latitude">
+    <input type="hidden" id="longTxt" step="any" name="longitude">
+
+    <button type="submit" id="submitBtn" class="btn btn-primary">Search</button>
+
+</form>
+
+<button id="locBtn" class="location-button" onclick="getLocation()">
+    <i class="fa fa-location-arrow"></i>
+</button>
+
+<div id="results"></div>
+
+<script type="module">
+    addLocationFormListen();
+</script>
+
 
 
 
@@ -253,6 +251,24 @@ body {
                 </div>
 
               </li>
+
+              
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="chatbubble-ellipses-outline"</ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Real-time Forum</h3>
+
+                  <p class="about-item-text">
+                    Check what others are saying about the selected resort right now!
+                  </p>
+                </div>
+
+              </li>
+
 
             </ul>
             </div>

@@ -461,9 +461,22 @@ body {
     max-width: 500px; /* Ensures the form does not exceed a maximum width */
     margin: auto; /* Centers the form horizontally */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow around the form */
+    font-size: 28px;
+
+
+}
+
+#locationForm, #locationForm * {
     font-size: 18px;
 }
 
+#locationForm .form-control, #locationForm .btn {
+    font-size: 18px;
+}
+
+#locationForm .form-label {
+    font-size: 18;
+}
 
 
 /*-----------------------------------*\
