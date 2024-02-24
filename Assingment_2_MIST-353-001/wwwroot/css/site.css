@@ -450,7 +450,7 @@ body {
    # SEARCH BAR
 \*-----------------------------------*/
 .search-form {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    background-color: rgba(0, 40, 85, 0.9); /* Semi-transparent white */
     padding: 15px;
     border-radius: 4px; /* Reduced border-radius */
     margin-bottom: 20px;
