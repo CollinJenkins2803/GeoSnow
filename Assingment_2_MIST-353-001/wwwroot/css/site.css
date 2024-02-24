@@ -412,7 +412,9 @@ body {
 .hero {
     background-repeat: no-repeat, no-repeat;
     background-position: bottom left, top right;
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    padding: 40px; /* Add some padding for spacing */
+    border-radius: 8px; /* Optional: Add a border radius for a softer look */
 }
 
 .hero-content {
@@ -520,7 +522,7 @@ body {
 
 .about-text,
 .about-item-text {
-    color: var(--battleship-gray);
+    color: var(--WVU-gold);
     font-size: var(--fs-6);
     line-height: 1.7;
 }
@@ -542,8 +544,8 @@ body {
 }
 
 .about-item-icon {
-    background: var(--WVU-blue);
-    color: var(--white-1);
+    background: var(--white-1);
+    color: var(--WVU-gold);
     font-size: 26px;
     padding: 16px;
     border-radius: 50%;
@@ -551,7 +553,7 @@ body {
 }
 
 .about-item-title {
-    color: var(--granite-gray);
+    color: var(--white-1);
     font-weight: var(--fw-600);
     margin-bottom: 5px;
 }
@@ -565,6 +567,7 @@ body {
   .about-content {
     flex: 1; /* Allows the content to grow and shrink as needed */
     padding-right: 20px; /* Adds some space between the content and the video */
+    
   }
   
   .about-video {
