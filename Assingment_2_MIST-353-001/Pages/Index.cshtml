@@ -80,9 +80,9 @@ body {
     </a>
 
     <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-      <ion-icon name="menu-outline" class="open"></ion-icon>
-      <ion-icon name="close-outline" class="close"></ion-icon>
-    </button>
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
 
     <nav class="navbar">
       <ul class="navbar-list">
@@ -141,9 +141,8 @@ body {
       </section>
       
  </main>     
- <!-- Search Bar -->
+<!-- Search Bar -->
 <form id="locationForm" action="/searchResults" class="search-form">
-
     <div class="input-group">
         <span class="input-group-text"><i class="fa-solid fa-location-arrow"></i></span>
         <input type="text" id="locInp" name="location" class="form-control" placeholder="Where are you going?" aria-label="Location">
@@ -163,9 +162,8 @@ body {
             <option value="1">1 traveler</option>
             <option value="2">2 travelers</option>
             <option value="3">3 travelers</option>
-            <option value="3">4 travelers</option>
-            <option value="3">5 travelers</option>
-
+            <option value="4">4 travelers</option>
+            <option value="5">5 travelers</option>
         </select>
     </div>
 
@@ -173,18 +171,19 @@ body {
     <input type="hidden" id="longTxt" step="any" name="longitude">
 
     <button type="submit" id="submitBtn" class="btn btn-primary">Search</button>
-
 </form>
 
 <button id="locBtn" class="location-button" onclick="getLocation()">
     <i class="fa fa-location-arrow"></i>
-</button>
+Current Location</button>
 
 <div id="results"></div>
 
 <script type="module">
     addLocationFormListen();
 </script>
+
+
 
 
 

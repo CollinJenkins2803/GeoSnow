@@ -446,37 +446,60 @@ body {
     gap: 15px;
 }
 
-
 /*-----------------------------------*\
-  #SEARCH BAR
+   # SEARCH BAR
 \*-----------------------------------*/
-#locationForm {
-    /* Example styles from Chat-GPT */
-    font-family: Arial, sans-serif; /* Sets the font for all text inside the form */
-    color: #333; /* Sets the text color */
-    background-color: #f8f8f8; /* Sets the background color of the form */
-    padding: 20px; /* Adds space inside the form */
-    border-radius: 8px; /* Rounds the corners of the form */
-    width: 100%; /* Sets the width of the form */
-    max-width: 500px; /* Ensures the form does not exceed a maximum width */
-    margin: auto; /* Centers the form horizontally */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow around the form */
-    font-size: 28px;
-
-
+.search-form {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 15px;
+    border-radius: 4px; /* Reduced border-radius */
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px); /* Blur the background behind the form */
 }
 
-#locationForm, #locationForm * {
-    font-size: 18px;
+.localBtn {
+    color: var(--WVU-gold); 
 }
 
-#locationForm .form-control, #locationForm .btn {
-    font-size: 18px;
+
+
+
+
+.location-button {
+    margin-top: 10px;
+    background-color: var(--WVU-gold); /* Darker background */
+    color: #fff; /* White text color */
+    border: 1px solid var(--WVU-blue); /* WVU blue border */
+    border-radius: 4px; /* Reduced border-radius */
+    padding: 8px 12px; /* Adjusted padding */
 }
 
-#locationForm .form-label {
-    font-size: 18;
+.input-group, .date-input-group, .select-group {
+    margin-bottom: 10px; /* Reduced margin */
 }
+
+.form-control, .form-select {
+    border-radius: 4px; /* Reduced border-radius */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: 1px solid #ccc; /* Light gray border */
+    font-size: 16px; /* Increased font size */
+    padding: 8px 12px; /* Adjusted padding */
+}
+
+.btn-primary {
+    border-radius: 4px; /* Reduced border-radius */
+    background-color: var(--WVU-blue);
+    border-color: var(--WVU-blue);
+    font-size: 16px; /* Increased font size */
+    padding: 8px 12px; /* Adjusted padding */
+}
+
+@media (max-width: 768px) {
+    .input-group, .date-input-group, .select-group {
+        width: 100%;
+    }
+}
+
 
 
 /*-----------------------------------*\

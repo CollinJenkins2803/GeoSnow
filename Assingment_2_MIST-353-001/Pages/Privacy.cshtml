@@ -1,9 +1,10 @@
-﻿@page
+﻿
+@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy for GeoSnow Inc.";
+    ViewData["Title"] = "GeoSnow";
 }
-<h1> @ViewData["Title"]</h1>
+
 <style>  
         /* Style for top headers using <p> */
         .WVU-gold{
@@ -15,6 +16,46 @@
        
 </style>
 <body>
+
+   <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+  
+      <a class="navbar-brand" href="#">
+        <img src="Logo.png" alt="GeoSnow Logo" style="width:70px;" class="rounded-pill">
+      </a>
+  
+      <a href="/#">
+        <h1 class="logo" style="color: rgb(234, 170, 0)">GeoSnow </h1>
+      </a>
+  
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+  
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li>
+            <a href="/#" class="navbar-link">Home</a>
+          </li>
+          <li>
+            <a href="/#about" class="navbar-link">About Us</a>
+          </li>
+          <li>
+            <a href="/ContactUs.html" class="navbar-link">Contact Us</a>
+          </li>
+        </ul>
+        <a href="/#locationForm" class="btn btn-secondary">Booking Now</a>
+      </nav>
+  
+    </div>
+  </header>
+
+
   <div class="container" id="WVU-gold">
     <p><strong>Last Updated:</strong> 2/23/2024</p>
     <p>Welcome to GeoSnow Inc. ("we", "us", "our"). We are committed to protecting your privacy and ensuring that your personal information is collected and used properly, transparently, and securely. This Privacy Policy explains how we use, share, and protect the information we collect when you use our website and services.</p>
@@ -205,4 +246,11 @@
     -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+     <!--
+      -Custom JS link
+  -->
+  <script src="./js/site.js"></script>
+
+
 </body>
