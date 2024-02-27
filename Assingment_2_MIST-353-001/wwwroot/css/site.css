@@ -415,6 +415,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
     padding: 40px; /* Add some padding for spacing */
     border-radius: 8px; /* Optional: Add a border radius for a softer look */
+    top: -60px
 }
 
 .hero-content {
