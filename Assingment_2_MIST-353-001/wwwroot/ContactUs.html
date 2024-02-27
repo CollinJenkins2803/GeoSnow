@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoSnow Inc.</title>
     <link rel="stylesheet" href="./css/site.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
    
    
   <!--
@@ -36,10 +36,32 @@
 
         /* Style for bottom headers using <h2> */
         h2 {
-            /* WVU Blue  */
+            /* WVU Gold  */
             color: rgb(234, 170, 0);
             font-family: 'Heebo', sans-serif;
         }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            background-color: var(--WVU-gold);
+            width: 100%;
+            position: relative;
+            top: 40px;
+}
+      #tableHero{
+            margin-top: 70px;
+      }
+        
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -83,10 +105,14 @@
     <!--
         #TABLE w3schools
     -->
+    
     <div class="container mt-3" style="font-size: 18px;">
-        <h2>Contact Us!</h2>
+      <div class="container" id="tableHero">
+        <h2 style="color: rgb(234, 170, 0)">Contact Us!</h2>
         <p>This is our current employee list</p>
-        <table class="table table-dark">
+      </div>
+        
+        <table>
             <thead>
                 <tr>
                     <th>First name</th>

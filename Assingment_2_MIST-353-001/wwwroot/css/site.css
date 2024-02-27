@@ -418,7 +418,7 @@ body {
 }
 
 .hero-content {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .hero .section-subtitle {
@@ -448,6 +448,7 @@ body {
     gap: 15px;
 }
 
+
 /*-----------------------------------*\
    # SEARCH BAR
 \*-----------------------------------*/
@@ -457,6 +458,8 @@ body {
     border-radius: 4px; /* Reduced border-radius */
     margin-bottom: 20px;
     backdrop-filter: blur(5px); /* Blur the background behind the form */
+    position: relative;
+    top: -120px;
 }
 
 .localBtn {
@@ -474,6 +477,8 @@ body {
     border: 1px solid var(--WVU-blue); /* WVU blue border */
     border-radius: 4px; /* Reduced border-radius */
     padding: 8px 12px; /* Adjusted padding */
+    position: relative;
+    top: -120px;
 }
 
 .input-group, .date-input-group, .select-group {
