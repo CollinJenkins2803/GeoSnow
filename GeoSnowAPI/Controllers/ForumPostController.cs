@@ -21,5 +21,17 @@ namespace GeoSnowAPI.Controllers
             var posts = await _forumService.GetPostsByResort(resortID);
             return Ok(posts);
         }
+        [HttpPost("add-forum-post")]
+        public async Task<IActionResult> AddForumPost(int resortID, string posterName, string title, string content, int? parentPostID = null)
+        {
+            await _forumService.AddForumPost(resortID, posterName, title, content, parentPostID);
+            return Ok("Forum post added successfully");
+        }
+        [HttpDelete("delete-forum-post/{postID}")]
+        public async Task<IActionResult> DeleteForumPost(int postID)
+        {
+            await _forumService.DeleteForumPost(postID);
+            return Ok("Forum post deleted successfully");
+        }
     }
 }
