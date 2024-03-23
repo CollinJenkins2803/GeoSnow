@@ -29,5 +29,20 @@ namespace GeoSnowAPI.Repositories
 
             return (bool)isSubscribedParam.Value;
         }
+        public async Task<string> AddSubscriber(string email)
+        {
+            // Check if the email is already subscribed
+            bool isSubscribed = await CheckEmailSubscription(email);
+            if (isSubscribed)
+            {
+                return "Email already exists.";
+            }
+            else
+            {
+                var emailParam = new SqlParameter("@Email", email);
+                await _dbContextClass.Database.ExecuteSqlRawAsync("EXEC AddSubscriber @Email", emailParam);
+                return "Subscriber added successfully.";
+            }
+        }
     }
 }

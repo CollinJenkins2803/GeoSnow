@@ -22,5 +22,18 @@ namespace GeoSnowAPI.Controllers
             var isSubscribed = await _newsletterService.CheckEmailSubscription(email);
             return Ok(isSubscribed);
         }
+        [HttpPost("add-subscriber")]
+        public async Task<ActionResult> AddSubscriber([FromBody] string email)
+        {
+            string result = await _newsletterService.AddSubscriber(email);
+            if (result == "Subscriber added successfully.")
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }
