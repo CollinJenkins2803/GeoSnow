@@ -44,5 +44,19 @@ namespace GeoSnowAPI.Repositories
                 return "Subscriber added successfully.";
             }
         }
+        public async Task<string> RemoveSubscriber(string email)
+        {
+            bool isSubscribed = await CheckEmailSubscription(email);
+            if (!isSubscribed)
+            {
+                return "Email does not exist.";
+            }
+            else
+            {
+                var emailParam = new SqlParameter("@Email", email);
+                await _dbContextClass.Database.ExecuteSqlRawAsync("EXEC RemoveSubscriber @Email", emailParam);
+                return "Subscriber removed succesfully.";
+            }
+        }
     }
 }

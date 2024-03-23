@@ -6,6 +6,7 @@ namespace GeoSnowAPI.Repositories
     {
         public Task<bool> CheckEmailSubscription(string email);
         public Task<string>AddSubscriber(string email);
+        public Task<string> RemoveSubscriber(string email);
     }
 }
 
