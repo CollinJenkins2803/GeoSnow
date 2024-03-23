@@ -1,6 +1,7 @@
 ﻿using GeoSnowAPI.Entities;
 using GeoSnowAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace GeoSnowAPI.Controllers
 {
@@ -23,7 +24,7 @@ namespace GeoSnowAPI.Controllers
             {
                 return NotFound();
             }
-            return Ok(subscriberList);
+            return subscriberList;
         }
     }
 }
