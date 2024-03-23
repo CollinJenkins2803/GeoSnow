@@ -17,7 +17,7 @@ namespace GeoSnowAPI.Repositories
         public async Task<List<NewsletterSubscriber>> NewsletterSubscribers(int SubscriberID)
         {
             var param = new SqlParameter("@SubscriberID", SubscriberID);
-            var SubscriberList = await Task.Run(() => _dbContextClass.NewsletterSubscribers.FromSqlRaw("NewsletterSubscribers @SubscriberID", param).ToListAsync());
+            var SubscriberList = await Task.Run(() => _dbContextClass.NewsletterSubscribers.FromSqlRaw("CheckEmailSubscription @SubscriberID", param).ToListAsync());
             return SubscriberList;
         }
     }
