@@ -4,6 +4,7 @@ namespace GeoSnowAPI.Repositories
 {
     public interface INewsletterService
     {
-        public Task<List<NewsletterSubscriber>> NewsletterSubscribers(int SubscriberID);
+        public Task<bool> CheckEmailSubscription(string email);
     }
 }
+

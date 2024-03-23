@@ -16,15 +16,11 @@ namespace GeoSnowAPI.Controllers
             _newsletterService = newsletterService;
         }
 
-        [HttpGet("{SubscriberID}")]
-        public async Task<ActionResult<List<NewsletterSubscriber>>> NewsletterSubscribers(int SubscriberID)
+        [HttpGet("check-subscription/{email}")]
+        public async Task<ActionResult<bool>> CheckEmailSubscription(string email)
         {
-            var subscriberList = await _newsletterService.NewsletterSubscribers(SubscriberID);
-            if (subscriberList == null)
-            {
-                return NotFound();
-            }
-            return subscriberList;
+            var isSubscribed = await _newsletterService.CheckEmailSubscription(email);
+            return Ok(isSubscribed);
         }
     }
 }

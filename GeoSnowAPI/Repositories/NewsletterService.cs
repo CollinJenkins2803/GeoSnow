@@ -2,6 +2,7 @@
 using GeoSnowAPI.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 
 namespace GeoSnowAPI.Repositories
@@ -14,11 +15,19 @@ namespace GeoSnowAPI.Repositories
         {
             _dbContextClass = dbContextClass;
         }
-        public async Task<List<NewsletterSubscriber>> NewsletterSubscribers(int SubscriberID)
+        public async Task<bool> CheckEmailSubscription(string email)
         {
-            var param = new SqlParameter("@SubscriberID", SubscriberID);
-            var SubscriberList = await Task.Run(() => _dbContextClass.NewsletterSubscribers.FromSqlRaw("CheckEmailSubscription @SubscriberID", param).ToListAsync());
-            return SubscriberList;
+            var emailParam = new SqlParameter("@Email", email);
+            var isSubscribedParam = new SqlParameter
+            {
+                ParameterName = "@IsSubscribed",
+                SqlDbType = SqlDbType.Bit,
+                Direction = ParameterDirection.Output
+            };
+
+            await _dbContextClass.Database.ExecuteSqlRawAsync("EXEC CheckEmailSubscription @Email, @IsSubscribed OUTPUT", emailParam, isSubscribedParam);
+
+            return (bool)isSubscribedParam.Value;
         }
     }
 }
