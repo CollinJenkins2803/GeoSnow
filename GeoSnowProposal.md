@@ -47,7 +47,7 @@
 ### Features and Functionality:
 - [This page will hold all of the resort information while showing the weather for the dates selected as well as a section containing all of the ForumPost for the respective resort]
 - [Users will have a range of things that they can do; blog, see the weather, as well as have the option to checkout]
-- [This page will use the APIs, "posts-by-resort", "add-forum-post", "delete-forum-post", and my future API. ""]
+- [This page will use the APIs, "posts-by-resort", "add-forum-post", "delete-forum-post", "ExternalNOAACall", and my future API. ""]
 
 ## Page 6: [CheckOut] | Author: Jillian Fluharty
 
