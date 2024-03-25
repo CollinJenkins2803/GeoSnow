@@ -2,7 +2,7 @@
 ![Nice Pic](https://valutrack.com/wp-content/uploads/2023/03/isa-cybersecurity-training-2-1.jpg)
 ## Newsletter APIs
 
-### 1. Check Email Subscription
+### 1. Check Email Subscription | Author: Collin Jenkins
 
 - **Purpose**: Checks if an email is subscribed to the newsletter.
 - **Endpoint**: `GET /api/newsletter/check-subscription/{email}`
