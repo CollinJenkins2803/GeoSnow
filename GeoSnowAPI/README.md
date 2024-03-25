@@ -11,7 +11,7 @@
 - **Output**: 
   - `true` if the email is subscribed, `false` otherwise.
 
-### 2. Add Subscriber
+### 2. Add Subscriber | Author: Collin Jenkins
 
 - **Purpose**: Adds a new subscriber to the newsletter.
 - **Endpoint**: `POST /api/newsletter/add-subscriber`
@@ -20,7 +20,7 @@
 - **Output**: 
   - Success message if the email is added, error message otherwise.
 
-### 3. Remove Subscriber
+### 3. Remove Subscriber | Author: Anthony Marchitto
 
 - **Purpose**: Removes a subscriber from the newsletter.
 - **Endpoint**: `POST /api/newsletter/remove-subscriber`
@@ -31,7 +31,7 @@
 
 ## Forum APIs
 
-### 4. Get Posts By Resort
+### 4. Get Posts By Resort | Author: Anthony Marchitto
 
 - **Purpose**: Retrieves all forum posts associated with a specific resort.
 - **Endpoint**: `GET /api/forum/posts-by-resort/{resortID}`
@@ -40,7 +40,7 @@
 - **Output**: 
   - A list of forum posts for the specified resort.
 
-### 5. Add Forum Post
+### 5. Add Forum Post | Author: Jillian Fluharty
 
 - **Purpose**: Adds a new post to the forum.
 - **Endpoint**: `POST /api/forum/add-forum-post`
@@ -53,7 +53,7 @@
 - **Output**: 
   - Success message if the post is added.
 
-### 6. Delete Forum Post
+### 6. Delete Forum Post | Author: Jillian Fluharty
 
 - **Purpose**: Deletes a post from the forum.
 - **Endpoint**: `DELETE /api/forum/delete-forum-post/{postID}`
