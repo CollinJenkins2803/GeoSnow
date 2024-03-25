@@ -15,6 +15,7 @@ namespace GeoSnowAPI.Repositories
         {
             _dbContextClass = dbContextClass;
         }
+        // Author: Collin Jenkins
         public async Task<bool> CheckEmailSubscription(string email)
         {
             var emailParam = new SqlParameter("@Email", email);
@@ -29,6 +30,7 @@ namespace GeoSnowAPI.Repositories
 
             return (bool)isSubscribedParam.Value;
         }
+        // Author: Collin Jenkins
         public async Task<string> AddSubscriber(string email)
         {
             // Check if the email is already subscribed
@@ -44,6 +46,7 @@ namespace GeoSnowAPI.Repositories
                 return "Subscriber added successfully.";
             }
         }
+        // Author: Anthony Marchitto
         public async Task<string> RemoveSubscriber(string email)
         {
             bool isSubscribed = await CheckEmailSubscription(email);

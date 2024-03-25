@@ -12,11 +12,13 @@ namespace GeoSnowAPI.Repositories
         {
             _dbContext = dbContext;
         }
+        // Author: Anthony Marchitto
         public async Task<List<ForumPost>> GetPostsByResort(int resortID)
         {
             var resortIdParam = new SqlParameter("@ResortID", resortID);
             return await _dbContext.ForumPosts.FromSqlRaw("EXEC GetPostsByResort @ResortID", resortIdParam).ToListAsync();
         }
+        // Author: Jillian Fluharty
         public async Task AddForumPost(int resortID, string posterName, string title, string content, int? parentPostID)
         {
             var resortIdParam = new SqlParameter("@ResortID", resortID);
@@ -30,6 +32,7 @@ namespace GeoSnowAPI.Repositories
             await _dbContext.Database.ExecuteSqlRawAsync("EXEC AddForumPost @ResortID, @PosterName, @Title, @Content, @ParentPostID",
                 resortIdParam, posterNameParam, titleParam, contentParam, parentPostIdParam);
         }
+        // Author: Jillian Fluharty
         public async Task DeleteForumPost(int postID)
         {
             var postIdParam = new SqlParameter("@PostID", postID);
