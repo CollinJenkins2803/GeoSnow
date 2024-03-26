@@ -1,4 +1,5 @@
 using GeoSnowAPI.Data;
+using GeoSnowAPI.Entities;
 using GeoSnowAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<INewsletterService, NewsletterService>();
 builder.Services.AddScoped<IForumPostService, ForumPostService>();
+builder.Services.AddScoped<IResortService, ResortService>();
 builder.Services.AddDbContext<DbcontextClass>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
