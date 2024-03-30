@@ -1,0 +1,16 @@
+﻿@page
+@model Assingment_2_MIST_353_001.Pages.Shared.SearchResultsModel
+@{
+    var lat = HttpContext.Request.Query["latitude"];
+    var longitude = HttpContext.Request.Query["longitude"];
+    var checkIn = HttpContext.Request.Query["startDate"];
+    var checkOut = HttpContext.Request.Query["endDate"];
+}
+
+<h1>Search Results</h1>
+@Html.Raw(Model.JsonData)
+<div id="ResortResults" style="visibility: hidden;"></div>
+
+<script type="module">
+    displaySearchResults(@lat, @longitude, @checkIn, @checkOut);
+</script>

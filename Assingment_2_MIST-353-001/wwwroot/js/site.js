@@ -112,4 +112,14 @@ function showError(error) {
         document.getElementById('ResortContact').style.visibility = 'visible';
 
     }
+
+    async function displaySearchResults(latitude, longitude, startDate, endDate, radius) {
+        const response = await fetch(`https://localhost:7293/api/Resort/searchByRadiusDateRange?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`);
+        const data = await response.json();
+        const innerHtml="";
+        for (let i = 0; i < length(data); i++) {
+            innerHtml += `<div style="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].ResortID}${data[i].name}</div>
+</div>`
+        }
+    }
 }
