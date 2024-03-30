@@ -60,6 +60,28 @@ namespace GeoSnowAPI.Entities
             ).ToListAsync();
 
         }
+        
+        public async Task AddResort(Resort resort)
+            {
+                var parameters = new[]
+                {
+            new SqlParameter("@Address", resort.Address),
+            new SqlParameter("@Zipcode", resort.Zipcode),
+            new SqlParameter("@City", resort.City),
+            new SqlParameter("@State", resort.State),
+            new SqlParameter("@Country", resort.Country),
+            new SqlParameter("@Name", resort.Name),
+            new SqlParameter("@Phone", resort.Phone ?? (object)DBNull.Value),
+            new SqlParameter("@ResortType", resort.ResortType ?? (object)DBNull.Value),
+            new SqlParameter("@Email", resort.Email ?? (object)DBNull.Value),
+            new SqlParameter("@Latitude", resort.Latitude ?? (object)DBNull.Value),
+            new SqlParameter("@Longitude", resort.Longitude ?? (object)DBNull.Value)
+        };
+
+                await _dbContext.Database.ExecuteSqlRawAsync("EXEC AddResort @Address, @Zipcode, @City, @State, @Country, @Name, @Phone, @ResortType, @Email, @Latitude, @Longitude", parameters);
+            }
+        }
+
     }
-}
+
 

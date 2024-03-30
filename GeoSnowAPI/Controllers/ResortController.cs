@@ -46,5 +46,12 @@ namespace GeoSnowAPI.Controllers
         {
             return Ok(await _resortService.ResortSearchByRadiusDateRange(latitude, longitude, startDate, endDate, radius));
         }
+
+        [HttpPost("addResort")]
+        public async Task<ActionResult> AddResort([FromBody] Resort resort)
+        {
+            await _resortService.AddResort(resort);
+            return Ok("Resort added successfully");
+        }
     }
 }
