@@ -1,7 +1,20 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowRazorPagesApp", builder =>
+    {
+        builder.WithOrigins("https://localhost:7293")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -17,6 +30,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
 
 app.UseAuthorization();
 

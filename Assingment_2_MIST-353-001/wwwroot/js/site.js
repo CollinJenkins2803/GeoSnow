@@ -98,4 +98,18 @@ function showError(error) {
             alert("An unknown error occurred.");
             break;
     }
+
+    async function displayResortDetails(ResortID) {
+        const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
+        const data = await response.json();
+        document.getElementById('ResortName').innerHTML = data[0].name;
+        document.getElementById('ResortName').style.visibility = "visible";
+
+        document.getElementById('ResortAddress').innerHTML = data[0].address + ", " + data[0].city + ", " + data[0].state + ", " + data[0].zipcode + ", " + data[0].country;
+        document.getElementById('ResortAddress').style.visibility = 'visible';
+
+        document.getElementById('ResortContact').innerHTML = data[0].phone + ", " + data[0].email;
+        document.getElementById('ResortContact').style.visibility = 'visible';
+
+    }
 }

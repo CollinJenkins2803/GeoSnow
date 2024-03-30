@@ -1,0 +1,26 @@
+﻿@page
+@model Assingment_2_MIST_353_001.Pages.ResortModel
+@{
+    var ResortID = HttpContext.Request.Query["ResortID"];
+}
+
+<h2 id="ResortName" style="visibility: hidden;"></h2>
+<div id="ResortAddress" style="visibility: hidden;"></div>
+<div id="ResortContact" style="visibility: hidden;"></div>
+
+<script type="module">
+    async function displayResortDetails(ResortID) {
+        const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
+        const data = await response.json();
+        document.getElementById('ResortName').innerHTML = data[0].name;
+        document.getElementById('ResortName').style.visibility = "visible";
+
+        document.getElementById('ResortAddress').innerHTML = data[0].address + ", " + data[0].city + ", " + data[0].state + ", " + data[0].zipcode + ", " + data[0].country;
+        document.getElementById('ResortAddress').style.visibility = 'visible';
+
+        document.getElementById('ResortContact').innerHTML = data[0].phone + ", " + data[0].email;
+        document.getElementById('ResortContact').style.visibility = 'visible';
+    }
+
+    displayResortDetails(@ResortID);
+</script>
