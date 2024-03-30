@@ -7,29 +7,38 @@
     var checkOut = HttpContext.Request.Query["endDate"];
     var distance = HttpContext.Request.Query["radius"];
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <script src="~/js/site.js" defer></script>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div id="ResortResults" style="visibility: hidden;"></div>
 
-<h1>Search Results</h1>
-<div id="ResortResults" style="visibility: hidden;"></div>
-
-<script type="module">
-    async function displaySearchResults(latitude, longitude, startDate, endDate, radius) {
-        try {
-            const response = await fetch(`https://localhost:7293/api/Resort/searchByRadiusDateRange?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+    <script type="module">
+        async function displaySearchResults(latitude, longitude, startDate, endDate, radius) {
+            try {
+                const response = await fetch(`https://localhost:7293/api/Resort/searchByRadiusDateRange?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                let innerHtml = "";
+                for (let i = 0; i < data.length; i++) {
+                    innerHtml += `<div class="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].resortID}">${data[i].name}</a></div>`;
+                }
+                document.getElementById('ResortResults').innerHTML = innerHtml;
+                document.getElementById('ResortResults').style.visibility = 'visible';
+            } catch (e) {
+                console.error('There was a problem fetching the resort data:', e);
             }
-            const data = await response.json();
-            let innerHtml = "";
-            for (let i = 0; i < data.length; i++) {
-                innerHtml += `<div class="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].ResortID}">${data[i].name}</a></div>`;
-            }
-            document.getElementById('ResortResults').innerHTML = innerHtml;
-            document.getElementById('ResortResults').style.visibility = 'visible';
-        } catch (e) {
-            console.error('There was a problem fetching the resort data:', e);
         }
-    }
 
-    displaySearchResults('@lat', '@longitude', '@checkIn', '@checkOut', '@distance');
-</script>
-    
+        displaySearchResults('@lat', '@longitude', '@checkIn', '@checkOut', '@distance');
+    </script>
+</body>
+</html>

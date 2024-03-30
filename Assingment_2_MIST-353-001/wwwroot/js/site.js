@@ -49,26 +49,36 @@ function displayAddress(address) {
 }
 
 function addLocationFormListen() {
-    document.getElementById('locationForm').addEventListener('submit', function(e) {
+    document.getElementById('locationForm').addEventListener('submit', async function (e) {
         e.preventDefault();
-        let userInput = document.getElementById('locInp').value;
         let latitude = document.getElementById('latTxt').value;
         let longitude = document.getElementById('longTxt').value;
-        if (latitude && longitude) {
-            this.submit();
-        } else {
-            getCoordinates(userInput);
+        let startDate = document.getElementById('startDateInp').value;
+        let endDate = document.getElementById('endDateInp').value;
+        let radius = document.getElementById('radiusDrop').value;
+
+        // Use previously fetched coordinates or fetch based on the user input.
+        if (!latitude || !longitude) {
+            let userInput = document.getElementById('locInp').value;
+            await getCoordinates(userInput); // This function should set latTxt and longTxt values.
+            latitude = document.getElementById('latTxt').value;
+            longitude = document.getElementById('longTxt').value;
         }
+
+        // Construct the correct URL.
+        const searchURL = `https://localhost:7113/Shared/SearchResults?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`;
+        window.location.href = searchURL; // Redirect to the constructed URL.
     });
 }
+
 
 async function getCoordinates(address) {
     try {
         const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${address}`);
         const data = await response.json();
         if (data.length > 0) {
-            const coords = { lat: data[0].lat, lon: data[0].lon };
-            displayCoordinates(coords);
+            document.getElementById('latTxt').value = data[0].lat;
+            document.getElementById('longTxt').value = data[0].lon;
         } else {
             alert("No results found for the given address.");
         }
@@ -77,11 +87,11 @@ async function getCoordinates(address) {
     }
 }
 
-function displayCoordinates(coords) {
-    document.getElementById('results').innerHTML = `Coordinates: ${coords.lat}, ${coords.lon}`;
-    document.getElementById('latTxt').value = coords.lat;
-    document.getElementById('longTxt').value = coords.lon;
-}
+//function displayCoordinates(coords) {
+//    document.getElementById('results').innerHTML = `Coordinates: ${coords.lat}, ${coords.lon}`;
+//    document.getElementById('latTxt').value = coords.lat;
+//   document.getElementById('longTxt').value = coords.lon;
+//}
 
 function showError(error) {
     switch (error.code) {
@@ -130,3 +140,37 @@ function showError(error) {
         document.getElementById('ResortResults').style.visibility = 'visible';
     }
 
+document.getElementById('newsletterForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('newsletterEmail').value;
+    const messageElement = document.getElementById('newsletterMessage');
+
+    try {
+        // Check if the email is already subscribed
+        const checkResponse = await fetch(`https://localhost:7293/api/Newsletter/check-subscription?email=${email}`);
+        const isSubscribed = await checkResponse.json();
+
+        if (isSubscribed) {
+            messageElement.textContent = 'This email is already subscribed.';
+        } else {
+            // Add the subscriber
+            const addResponse = await fetch('https://localhost:7293/api/Newsletter/add-subscriber?email=${email}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            });
+
+            if (addResponse.ok) {
+                messageElement.textContent = 'Thank you for subscribing!';
+            } else {
+                messageElement.textContent = 'There was an error subscribing. Please try again.';
+            }
+        }
+    } catch (error) {
+        console.error('Error subscribing to newsletter:', error);
+        messageElement.textContent = 'There was an error subscribing. Please try again.';
+    }
+});
