@@ -155,7 +155,7 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
             messageElement.textContent = 'This email is already subscribed.';
         } else {
             // Add the subscriber
-            const addResponse = await fetch('https://localhost:7293/api/Newsletter/add-subscriber?email=${email}', {
+            const addResponse = await fetch(`https://localhost:7293/api/Newsletter/add-subscriber?email=${email}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
