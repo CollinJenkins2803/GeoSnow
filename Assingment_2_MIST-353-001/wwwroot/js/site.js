@@ -98,7 +98,7 @@ function showError(error) {
             alert("An unknown error occurred.");
             break;
     }
-
+}
     async function displayResortDetails(ResortID) {
         const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
         const data = await response.json();
@@ -116,10 +116,17 @@ function showError(error) {
     async function displaySearchResults(latitude, longitude, startDate, endDate, radius) {
         const response = await fetch(`https://localhost:7293/api/Resort/searchByRadiusDateRange?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`);
         const data = await response.json();
-        const innerHtml="";
-        for (let i = 0; i < length(data); i++) {
-            innerHtml += `<div style="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].ResortID}${data[i].name}</div>
-</div>`
+        let innerHtml = "";
+        if (Array.isArray(data)) { // Check if data is an array
+            for (let i = 0; i < data.length; i++) {
+                // Make sure the property names here are correct
+                innerHtml += `<div class="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].ResortID}">${data[i].name}</a></div>`;
+            }
+        } else {
+            // Handle cases where data might not be an array
+            console.error('Data is not in the expected format', data);
         }
+        document.getElementById('ResortResults').innerHTML = innerHtml;
+        document.getElementById('ResortResults').style.visibility = 'visible';
     }
-}
+

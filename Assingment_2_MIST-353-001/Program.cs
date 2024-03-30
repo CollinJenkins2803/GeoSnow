@@ -32,7 +32,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseCors("AllowRazorPagesApp");
+app.UseCors("AllowMyRazorPagesApp");
 
 app.UseAuthorization();
 
