@@ -15,10 +15,10 @@
         document.getElementById('ResortName').innerHTML = data.name;
         document.getElementById('ResortName').style.visibility = "visible";
 
-        document.getElementById('ResortAddress').innerHTML = data[0].address + ", " + data[0].city + ", " + data[0].state + ", " + data[0].zipcode + ", " + data[0].country;
+        document.getElementById('ResortAddress').innerHTML = data.address + ", " + data.city + ", " + data.state + ", " + data.zipcode + ", " + data.country;
         document.getElementById('ResortAddress').style.visibility = 'visible';
 
-        document.getElementById('ResortContact').innerHTML = data[0].phone + ", " + data[0].email;
+        document.getElementById('ResortContact').innerHTML = data.phone + ", " + data.email;
         document.getElementById('ResortContact').style.visibility = 'visible';
     }
 
