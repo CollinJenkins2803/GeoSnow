@@ -20,9 +20,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowRazorPagesApp", builder =>
+    options.AddPolicy("AllowMyRazorPagesApp", builder =>
     {
-        builder.WithOrigins("https://localhost:7293")
+        builder.WithOrigins("https://localhost:7113")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
