@@ -7,6 +7,8 @@
 <h2 id="ResortName" style="visibility: hidden;"></h2>
 <div id="ResortAddress" style="visibility: hidden;"></div>
 <div id="ResortContact" style="visibility: hidden;"></div>
+<div id="ForumPostsContainer"></div>
+
 
 <script type="module">
     async function displayResortDetails(ResortID) {
@@ -20,6 +22,21 @@
 
         document.getElementById('ResortContact').innerHTML = data.phone + ", " + data.email;
         document.getElementById('ResortContact').style.visibility = 'visible';
+        
+        const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);
+        const forumPosts = await forumPostsResponse.json();
+        const forumPostsContainer = document.getElementById('ForumPostsContainer');
+        forumPostsContainer.innerHTML = '';
+        forumPosts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+                <p>Posted by: ${post.posterName}</p>
+            `;
+            forumPostsContainer.appendChild(postElement);
+        });
+
     }
 
     displayResortDetails('@ResortID');
