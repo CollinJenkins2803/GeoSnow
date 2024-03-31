@@ -46,7 +46,40 @@
     --transition-2: 0.35s ease;
     --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
 }
+/*-----------------------------------*\
+  #SearchResults
+\*-----------------------------------*/
+.search-results-header {
+    color: rgb(234, 170, 0);
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
+.results-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    visibility: visible;
+}
+
+.result-item {
+    color: rgb(234, 170, 0);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+    .result-item:last-child {
+        border-bottom: none;
+    }
 
 
 /*-----------------------------------*\
