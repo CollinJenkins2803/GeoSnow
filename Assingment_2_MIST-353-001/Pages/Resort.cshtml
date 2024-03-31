@@ -4,10 +4,269 @@
     var ResortID = HttpContext.Request.Query["ResortID"];
 }
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSnow - Calculations Limit</title>
+
+
+    <!--
+      - Custom css link
+    -->
+    <link rel="stylesheet" href="/css/site.css">
+    <!--
+      -Bootstrap link
+    -->
+    <!--
+        - Favicon Link
+      -->
+    <link rel="icon" href="\wwwroot\favicon.ico">
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!--
+      - #HEADER
+    -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                <img src="/Logo.png" alt="GeoSnow Logo" style="inline-size:70px;" class="rounded-pill">
+            </a>
+
+            <a href="#">
+                <h1 class="logo" style="color: rgb(234, 170, 0)">GeoSnow </h1>
+            </a>
+
+            <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+                <ion-icon name="menu-outline" class="open"></ion-icon>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </button>
+
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li>
+                        <a asp-page="/Index" class="navbar-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Index#about" class="navbar-link">About Us</a>
+                    </li>
+                    <li>
+                        <a asp-page="/ContactUs" class="navbar-link">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="/Index#locationForm" class="btn btn-secondary">Booking Now</a>
+            </nav>
+
+        </div>
+    </header>
+
+
 <h2 id="ResortName" style="visibility: hidden;"></h2>
 <div id="ResortAddress" style="visibility: hidden;"></div>
 <div id="ResortContact" style="visibility: hidden;"></div>
 <div id="ForumPostsContainer"></div>
+
+    <!--
+              - #FOOTER
+            -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Resorts by <ion-icon name="location-outline"></ion-icon> </p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Big White, Canada</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Chamonix, France</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Mammoth Mountain, California, USA</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Niseko, Hokkaido, Japan</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Jackson Hole, Wyoming</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Top forums</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">ResortID=16</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">ResortID=17</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">ResortID=21</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">ResortID=15</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">ResortID=25</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Quick links</p>
+                    </li>
+
+                    <li>
+                        <a href="/#locationForm" class="footer-link">Book Now</a>
+                    </li>
+
+
+                    <li>
+                        <a href="/#about" class="footer-link">About</a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/ContactUs" class="footer-link">Contact Us</a>
+                    </li>
+
+
+                    <li>
+                        <a href="/Privacy" class="footer-link">Terms & Conditions</a>
+                    </li>
+
+
+                </ul>
+
+                <div class="footer-list">
+
+                    <p class="footer-list-title">Get a newsletter</p>
+
+                    <p class="newsletter-text" style="color: hsl(0, 0%, 80%);">
+                        For the latest deals and tips, travel no further than your inbox
+                    </p>
+
+                    <form action="" class="newsletter-form">
+                        <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
+
+                        <button type="submit" class="btn btn-primary" style="background-color: rgb(234, 170, 0);">Subscribe</button>
+
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <a href="#" class="logo" style="color: rgb(234, 170, 0);">GeoSnow Inc.</a>
+
+
+                <p class="copyright">
+                    &copy; 2024 <a href="https://app.joinhandshake.com/stu/users/32284915" target="_blank" class="copyright-link">Collin Jenkins</a>. All Rights Reserved
+                </p>
+
+                <ul class="social-list">
+
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61556657134525" target="_blank" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://twitter.com/ColllinJenkins" target="_blank" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/geosnowinc/" target="_blank" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="module">
+        async function displaySearchResults(latitude, longitude, startDate, endDate, radius) {
+            try {
+                const response = await fetch(`https://localhost:7293/api/Resort/searchByRadiusDateRange?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                let innerHtml = "";
+                for (let i = 0; i < data.length; i++) {
+                    innerHtml += `<div class="card"><a href="https://localhost:7113/Resort?ResortID=${data[i].resortID}">${data[i].name}</a></div>`;
+                }
+                document.getElementById('ResortResults').innerHTML = innerHtml;
+                document.getElementById('ResortResults').style.visibility = 'visible';
+            } catch (e) {
+                console.error('There was a problem fetching the resort data:', e);
+            }
+        }
+    </script>
+
 
 
 <script type="module">
@@ -41,3 +300,5 @@
 
     displayResortDetails('@ResortID');
 </script>
+</body>
+</html>
