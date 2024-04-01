@@ -449,7 +449,7 @@ Current Location</button>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!--
-      - Newsletter Link (still dont work)
+      - Newsletter Link
     -->
   <script type="module">
         addLocationFormListen();
@@ -463,14 +463,14 @@ Current Location</button>
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: email })
+                body: JSON.stringify(email)
             });
 
             if (response.ok) {
                 alert('Thank you for subscribing to our newsletter!');
                 document.getElementById('newsletterForm').reset();
             } else {
-                alert('There was an error subscribing to the newsletter. Please try again later.');
+                alert('This appears to be a duplicate. Please try a new email:)');
             }
         });
     </script>
