@@ -21,5 +21,13 @@
   <ItemGroup>
     <Content Include="Pages\Index.cshtml.cs" />
   </ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\GeoSnowAPI\Entities\**\*.*">
+			<Link>Entities\%(RecursiveDir)%(FileName)%(Extension)</Link>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Pages\ResortCRUD\" />
+	</ItemGroup>
 
 </Project>
