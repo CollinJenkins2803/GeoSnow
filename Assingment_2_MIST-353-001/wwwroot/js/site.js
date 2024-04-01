@@ -71,7 +71,8 @@ function addLocationFormListen() {
 
         // Construct the correct URL.
         const searchURL = `https://localhost:7113/Shared/SearchResults?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`;
-        window.location.href = searchURL; // Redirect to the constructed URL.
+        window.open(searchURL, '_blank'); // Redirect to the constructed URL.
+      //window.location.href = searchURL;
     });
 }
 
