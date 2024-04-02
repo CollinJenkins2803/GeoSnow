@@ -1,8 +1,12 @@
+using Microsoft.AspNetCore.Identity;
 
+using Microsoft.EntityFrameworkCore;
+using Assingment_2_MIST_353_001.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddCors(options =>
@@ -14,7 +18,10 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod();
     });
 });
-
+builder.Services.AddDbContext<DbContextClass>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 

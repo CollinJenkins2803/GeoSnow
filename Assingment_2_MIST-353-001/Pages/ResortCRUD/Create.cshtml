@@ -1,0 +1,84 @@
+﻿@page
+@model Assingment_2_MIST_353_001.Pages.ResortCRUD.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Resort</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Resort.Address" class="control-label"></label>
+                <input asp-for="Resort.Address" class="form-control" />
+                <span asp-validation-for="Resort.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Zipcode" class="control-label"></label>
+                <input asp-for="Resort.Zipcode" class="form-control" />
+                <span asp-validation-for="Resort.Zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.City" class="control-label"></label>
+                <input asp-for="Resort.City" class="form-control" />
+                <span asp-validation-for="Resort.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.State" class="control-label"></label>
+                <input asp-for="Resort.State" class="form-control" />
+                <span asp-validation-for="Resort.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Country" class="control-label"></label>
+                <input asp-for="Resort.Country" class="form-control" />
+                <span asp-validation-for="Resort.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Name" class="control-label"></label>
+                <input asp-for="Resort.Name" class="form-control" />
+                <span asp-validation-for="Resort.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Phone" class="control-label"></label>
+                <input asp-for="Resort.Phone" class="form-control" />
+                <span asp-validation-for="Resort.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.ResortType" class="control-label"></label>
+                <input asp-for="Resort.ResortType" class="form-control" />
+                <span asp-validation-for="Resort.ResortType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Email" class="control-label"></label>
+                <input asp-for="Resort.Email" class="form-control" />
+                <span asp-validation-for="Resort.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Latitude" class="control-label"></label>
+                <input asp-for="Resort.Latitude" class="form-control" />
+                <span asp-validation-for="Resort.Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resort.Longitude" class="control-label"></label>
+                <input asp-for="Resort.Longitude" class="form-control" />
+                <span asp-validation-for="Resort.Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

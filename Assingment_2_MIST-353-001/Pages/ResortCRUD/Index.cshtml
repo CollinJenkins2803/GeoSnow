@@ -1,0 +1,96 @@
+﻿@page
+@model Assingment_2_MIST_353_001.Pages.ResortCRUD.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Zipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].ResortType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resort[0].Longitude)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Resort) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResortType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ResortID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ResortID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ResortID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
