@@ -42,6 +42,91 @@
             margin-top: 20px; /* Adds some space above the container */
         }
     </style>
+    <style>
+        /* Main content area 
+        main {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+                */
+        /* Forum post container */
+        #ForumPostsContainer {
+            max-height: 400px; /* Adjust the height as needed */
+            overflow-y: auto; /* Enables vertical scrolling */
+            border: 1px solid #ccc; /* Adds a border */
+            padding: 10px; /* Adds some padding */
+            margin-top: 20px; /* Adds some space above the container */
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        /* Individual forum post */
+        .forum-post {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+            .forum-post:last-child {
+                border-bottom: none;
+            }
+
+            .forum-post h3 {
+                margin-top: 0;
+            }
+
+        /* Form styles */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+            form input[type="text"],
+            form input[type="number"],
+            form textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            form button {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(234,170,0);
+                color: #fff;
+                cursor: pointer;
+            }
+
+        /* Refresh button */
+        .refresh-button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Utility classes */
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -102,10 +187,21 @@
 
     <!-- Form for removing a forum post -->
     <form id="removePostForm">
-        <input type="number" id="postIdToRemove" placeholder="Post ID to Remove" required>
+        <input type="number" id="postIdToRemove" placeholder="Magic Password" required>
         <button type="submit">Remove Post</button>
     </form>
 
+    <h3>Click the button to see new changes made</h3>
+
+    <!-- Refresh Button -->
+    <button onclick="refreshPage()">Refresh Page</button>
+
+    <script>
+        function refreshPage() {
+            // Reloads the current page
+            location.reload();
+        }
+    </script>
     <!--
               - #FOOTER
             -->
