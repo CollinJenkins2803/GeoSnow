@@ -7,7 +7,7 @@
 - [This page acts as the home page, it will allow users to find out what we are all about and also jump straight into exploring]
 
 ### Features and Functionality:
-- [This page can grab the users current location so searching for results is made easier: uses API, "https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon={long}&format=json
+- [This page can grab the users current location so searching for results is made easier: uses API, "https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon={long}&format=json"
 - [The user can also add themselves to the newsletter using the APIs "/api/Newsletter/add-subscriber" & "/api/Newsletter/check-subscription/{email}"]
 
 ## Page 2: [ContactUs] | Author: Jillian Fluharty
