@@ -74,7 +74,7 @@
         /* Individual forum post */
         .forum-post {
             border-bottom: 1px solid #eee;
-            padding-bottom: 40px;
+            padding-bottom: 20px;
             margin-bottom: 10px;
         }
 
@@ -402,14 +402,14 @@
     async function displayResortDetails(ResortID) {
         const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
         const data = await response.json();
-        document.getElementById('ResortName').innerHTML = data.name;
-        document.getElementById('ResortName').style.visibility = "visible";
+            document.getElementById('ResortName').innerHTML = `<div class="resort-detail-name">${data.name}</div>`;
+            document.getElementById('ResortName').style.visibility = "visible";
 
-        document.getElementById('ResortAddress').innerHTML = data.address + ", " + data.city + ", " + data.state + ", " + data.zipcode + ", " + data.country;
-        document.getElementById('ResortAddress').style.visibility = 'visible';
+            document.getElementById('ResortAddress').innerHTML = `<div class="resort-detail-address">${data.address}, ${data.city}, ${data.state}, ${data.zipcode}, ${data.country}</div>`;
+            document.getElementById('ResortAddress').style.visibility = 'visible';
 
-        document.getElementById('ResortContact').innerHTML = data.phone + ", " + data.email;
-        document.getElementById('ResortContact').style.visibility = 'visible';
+            document.getElementById('ResortContact').innerHTML = `<div class="resort-detail-contact">${data.phone}, ${data.email}</div>`;
+            document.getElementById('ResortContact').style.visibility = 'visible';
 
 
             const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);

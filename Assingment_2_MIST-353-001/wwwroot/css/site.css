@@ -44,8 +44,15 @@
    */
     --transition-1: 0.15s ease;
     --transition-2: 0.35s ease;
-    --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+    --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02)
 }
+
+
+
+
+
+
+
 /*-----------------------------------*\
   #SearchResults
 \*-----------------------------------*/
@@ -81,6 +88,28 @@
         border-bottom: none;
     }
 
+.resort-detail-name, .resort-detail-address, .resort-detail-contact {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.resort-detail-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.resort-detail-address {
+    font-size: 1em;
+    color: #555;
+}
+
+.resort-detail-contact {
+    font-size: 0.9em;
+    color: #777;
+}
 
 /*-----------------------------------*\
   #ContactUS
