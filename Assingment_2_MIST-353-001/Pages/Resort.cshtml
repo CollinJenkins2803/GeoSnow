@@ -74,7 +74,7 @@
         /* Individual forum post */
         .forum-post {
             border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            padding-bottom: 40px;
             margin-bottom: 10px;
         }
 
@@ -410,8 +410,22 @@
 
         document.getElementById('ResortContact').innerHTML = data.phone + ", " + data.email;
         document.getElementById('ResortContact').style.visibility = 'visible';
-        
-        const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);
+
+
+            const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);
+            const forumPosts = await forumPostsResponse.json();
+            const forumPostsContainer = document.getElementById('ForumPostsContainer');
+            forumPostsContainer.innerHTML = ''; // Clear existing posts
+            forumPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'forum-post'; // Add a class for styling
+                postElement.innerHTML = `
+                    <div class="forum-post-title"><h3>${post.title}</h3></div>
+                    <div class="forum-post-content"><p>${post.content}</p></div>
+                    <div class="forum-post-footer"><p>Posted by: ${post.posterName}</p></div>
+                `;
+                forumPostsContainer.appendChild(postElement);
+       /* const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);
         const forumPosts = await forumPostsResponse.json();
         const forumPostsContainer = document.getElementById('ForumPostsContainer');
         forumPostsContainer.innerHTML = '';
@@ -422,7 +436,7 @@
                 <p>${post.content}</p>
                 <p>Posted by: ${post.posterName}</p>
             `;
-            forumPostsContainer.appendChild(postElement);
+            forumPostsContainer.appendChild(postElement);*/
         });
 
     }
