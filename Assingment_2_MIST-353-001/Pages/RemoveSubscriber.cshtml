@@ -1,7 +1,9 @@
 ﻿@page
-@model Assingment_2_MIST_353_001.Pages.ContactUsModel
+
+@model Assingment_2_MIST_353_001.Pages.RemoveSubscriberModel
 @{
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +53,6 @@
             background-color: var(--WVU-gold);
             width: 100%;
             position: relative;
-            
         }
 
         #tableHero {
@@ -106,41 +107,33 @@
         </div>
     </header>
     <!--
-        #TABLE w3schools
+        #Removing Email
     -->
 
-    <div class="container mt-3" style="font-size: 18px;">
-        <div class="container" id="tableHero">
-            <h2 style="color: rgb(234, 170, 0)">Contact Us!</h2>
-            <p>This is our current employee list</p>
-        </div>
+    <div class="footer-list">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Collin</td>
-                    <td>Jenkins</td>
-                    <td>cpj00003@mix.wvu.edu</td>
-                </tr>
-                <tr>
-                    <td>Jillian</td>
-                    <td>Fluharty</td>
-                    <td>jgf00004@mix.wvu.edu</td>
-                </tr>
-                <tr>
-                    <td>Anthony</td>
-                    <td>Marchitto</td>
-                    <td>am00113@mix.wvu.edu</td>
-                </tr>
-            </tbody>
-        </table>
+        <p class="footer-list-title">Remove yourself from our newsletter</p>
+
+        <p class="newsletter-text" style="color: hsl(0, 0%, 80%);">
+            We appreciate your business and respect your time!
+        </p>
+
+        <form method="post" asp-page-handler="RemoveSubscriber" class="newsletter-form">
+            <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
+            <button type="submit" class="btn btn-primary" style="background-color: rgb(234, 170, 0);">Unsubscribe</button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+        
+
     </div>
     <!--
       - #FOOTER

@@ -37,7 +37,7 @@ namespace GeoSnowAPI.Controllers
             }
         }
         [HttpPost("remove-subscriber")]
-        public async Task<ActionResult> RemoveSubscriber([FromBody] string email)
+        public async Task<ActionResult> RemoveSubscriber([FromForm] string email)
         {
             if (string.IsNullOrWhiteSpace(email)){
                 return BadRequest("Email is required.");
