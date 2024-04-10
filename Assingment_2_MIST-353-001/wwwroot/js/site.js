@@ -180,7 +180,7 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
     }
 });
 
-
+/*
 async function addForumPost(resortId, posterName, postTitle, postContent) {
     const response = await fetch(`https://localhost:7293/api/Forum/add-forum-post`, {
         method: 'POST',
@@ -191,7 +191,29 @@ async function addForumPost(resortId, posterName, postTitle, postContent) {
     });
     console.log(await response.text());
     return response.ok;
+}*/
+
+async function addForumPost(resortId, posterName, postTitle, postContent) {
+    try {
+        const response = await fetch('https://localhost:7293/api/Forum/add-forum-post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ResortID: resortId,
+                PosterName: posterName,
+                Title: postTitle,
+                Content: postContent
+            })
+        });
+        return response.ok;
+    } catch (error) {
+        console.error('Error adding forum post:', error);
+        return false;
+    }
 }
+
 
 async function deleteForumPost(postID) {
     const response = await fetch(`https://localhost:7293/api/Forum/delete-forum-post/${postID}`, {

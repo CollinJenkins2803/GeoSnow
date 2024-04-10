@@ -22,15 +22,23 @@ namespace GeoSnowAPI.Controllers
             var posts = await _forumService.GetPostsByResort(resortID);
             return Ok(posts);
         }
-        
-        
+
+        /* 
+         [HttpPost("add-forum-post")]
+         public async Task<IActionResult> AddForumPost([FromBody] int resortId, string posterName, string postTitle, string postContent, int? parentPostID = null)
+         {
+             await _forumService.AddForumPost(resortId, posterName, postTitle, postContent, parentPostID);
+             return Ok("Forum post added successfully");
+         }
+         */
+
         [HttpPost("add-forum-post")]
-        public async Task<IActionResult> AddForumPost([FromBody] int resortId, string posterName, string postTitle, string postContent, int? parentPostID = null)
+        public async Task<IActionResult> AddForumPost([FromBody] ForumPost forumPost)
         {
-            await _forumService.AddForumPost(resortId, posterName, postTitle, postContent, parentPostID);
+            await _forumService.AddForumPost(forumPost.ResortID, forumPost.PosterName, forumPost.Title, forumPost.Content, forumPost.ParentPostID);
             return Ok("Forum post added successfully");
         }
-        
+
 
 
         [HttpDelete("delete-forum-post/{postID}")]
