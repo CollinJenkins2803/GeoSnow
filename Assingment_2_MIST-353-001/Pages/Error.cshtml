@@ -3,18 +3,78 @@
 @{
     ViewData["Title"] = "Error";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+        .error-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+            .error-container h1 {
+                color: rgb(0, 40, 85); /* WVU Gold */
+                font-size: 48px;
+                margin: 0 0 20px;
+            }
 
-<h3>Email does not exist</h3>
+            .error-container h2 {
+                color: rgb(0, 40, 85); /* WVU Gold */
+                font-size: 24px;
+                margin: 0 0 10px;
+            }
 
-<a asp-page="RemoveSubscriber"> Go Back</a>
+            .error-container p {
+                color: #666;
+                margin: 20px 0;
+            }
 
+            .error-container a {
+                display: inline-block;
+                background-color: rgb(234, 170, 0); /* WVU Blue */
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.2s;
+            }
+
+                .error-container a:hover {
+                    background-color: rgb(0, 30, 64); /* Darker WVU Blue */
+                }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Error.</h1>
+        <h2>An error occurred while processing your request.</h2>
+
+        @if (Model.ShowRequestId)
+        {
+            <p>
+                <strong>Request ID:</strong> <code>@Model.RequestId</code>
+            </p>
+        }
+
+        <h3>Email does not exist</h3>
+
+        <a asp-page="RemoveSubscriber">Go Back</a>
+    </div>
+</body>
+</html>
