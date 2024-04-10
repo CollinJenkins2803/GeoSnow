@@ -179,3 +179,25 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
         messageElement.textContent = 'There was an error subscribing. Please try again.';
     }
 });
+
+
+async function addForumPost(resortId, posterName, postTitle, postContent) {
+    const response = await fetch(`https://localhost:7293/api/Forum/add-forum-post`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ resortId, posterName, postTitle, postContent })
+    });
+    console.log(await response.text());
+    return response.ok;
+}
+
+async function deleteForumPost(postID) {
+    const response = await fetch(`https://localhost:7293/api/Forum/delete-forum-post/${postID}`, {
+        method: 'DELETE'
+    });
+   
+    return response.ok;
+}
+

@@ -32,8 +32,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
 
-
-
+    <!--Forum post container-->
+    <style>
+        #ForumPostsContainer {
+            max-height: 400px; /* Adjust the height as needed */
+            overflow-y: auto; /* Enables vertical scrolling */
+            border: 1px solid #ccc; /* Adds a border */
+            padding: 10px; /* Adds some padding */
+            margin-top: 20px; /* Adds some space above the container */
+        }
+    </style>
 </head>
 
 <body>
@@ -80,6 +88,23 @@
 <div id="ResortAddress" style="visibility: hidden;"></div>
 <div id="ResortContact" style="visibility: hidden;"></div>
 <div id="ForumPostsContainer"></div>
+
+    <!-- Forum posts will be displayed here -->
+    <form id="addPostForm">
+        <input type="hidden" id="resortId" value="@ResortID">
+        <input type="text" id="posterName" placeholder="Your Name" required>
+        <input type="text" id="postTitle" placeholder="Post Title" required>
+        <textarea id="postContent" placeholder="Write your post here..." rows="4" required></textarea>
+        <button type="submit">Add Post</button>
+    </form>
+
+
+
+    <!-- Form for removing a forum post -->
+    <form id="removePostForm">
+        <input type="number" id="postIdToRemove" placeholder="Post ID to Remove" required>
+        <button type="submit">Remove Post</button>
+    </form>
 
     <!--
               - #FOOTER
@@ -325,6 +350,42 @@
             }
         });
     </script>
+
+    <script>
+        document.getElementById('addPostForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const resortId = parseInt(document.getElementById('resortId').value, 10);
+            const posterName = document.getElementById('posterName').value;
+            const postTitle = document.getElementById('postTitle').value;
+            const postContent = document.getElementById('postContent').value;
+            console.log({ resortId, posterName, postTitle, postContent });
+            const success = await addForumPost(resortId, posterName, postTitle, postContent);
+            if (success) {
+                alert('Post added successfully');
+                displayResortDetails(resortID); // Refresh the forum posts list
+            } else {
+                alert('Failed to add the post');
+            }
+        });
+
+
+    </script>
+
+    <script>
+    document.getElementById('removePostForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const postID = document.getElementById('postIdToRemove').value;
+    const success = await deleteForumPost(postID);
+    if (success) {
+    alert('Post removed successfully');
+    displayResortDetails('@ResortID'); // Refresh the forum posts list
+    } else {
+    alert('Failed to remove the post');
+    }
+    });
+    </script>
+
+    <script src="~/js/site.js" defer></script>
 
 </body>
 </html>

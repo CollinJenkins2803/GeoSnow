@@ -2,6 +2,7 @@
 using GeoSnowAPI.Entities;
 using GeoSnowAPI.Repositories;
 
+
 namespace GeoSnowAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -21,12 +22,17 @@ namespace GeoSnowAPI.Controllers
             var posts = await _forumService.GetPostsByResort(resortID);
             return Ok(posts);
         }
+        
+        
         [HttpPost("add-forum-post")]
-        public async Task<IActionResult> AddForumPost(int resortID, string posterName, string title, string content, int? parentPostID = null)
+        public async Task<IActionResult> AddForumPost([FromBody] int resortId, string posterName, string postTitle, string postContent, int? parentPostID = null)
         {
-            await _forumService.AddForumPost(resortID, posterName, title, content, parentPostID);
+            await _forumService.AddForumPost(resortId, posterName, postTitle, postContent, parentPostID);
             return Ok("Forum post added successfully");
         }
+        
+
+
         [HttpDelete("delete-forum-post/{postID}")]
         public async Task<IActionResult> DeleteForumPost(int postID)
         {

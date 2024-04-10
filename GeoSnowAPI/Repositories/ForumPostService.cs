@@ -19,12 +19,12 @@ namespace GeoSnowAPI.Repositories
             return await _dbContext.ForumPosts.FromSqlRaw("EXEC GetPostsByResort @ResortID", resortIdParam).ToListAsync();
         }
         // Author: Jillian Fluharty
-        public async Task AddForumPost(int resortID, string posterName, string title, string content, int? parentPostID)
+        public async Task AddForumPost(int resortId, string posterName, string postTitle, string postContent, int? parentPostID)
         {
-            var resortIdParam = new SqlParameter("@ResortID", resortID);
+            var resortIdParam = new SqlParameter("@ResortID", resortId);
             var posterNameParam = new SqlParameter("@PosterName", posterName);
-            var titleParam = new SqlParameter("@Title", title);
-            var contentParam = new SqlParameter("@Content", content);
+            var titleParam = new SqlParameter("@Title", postTitle);
+            var contentParam = new SqlParameter("@Content", postContent);
             var parentPostIdParam = parentPostID.HasValue
                 ? new SqlParameter("@ParentPostID", parentPostID.Value)
                 : new SqlParameter("@ParentPostID", DBNull.Value);
