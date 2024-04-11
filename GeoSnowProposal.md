@@ -1,5 +1,5 @@
 # Web Application Overview
-![Nice Pic](https://valutrack.com/wp-content/uploads/2023/03/isa-cybersecurity-training-2-1.jpg)
+![Nice Pic](/Assingment_2_MIST-353-001/wwwroot/Logo.png)
 
 ## Page 1: [Index] (Dynamic) | Author: Anthony Marchitto
 
