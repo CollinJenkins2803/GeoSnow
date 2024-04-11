@@ -1,4 +1,4 @@
-﻿MIST-353 Assignment 2: Prototype Development and Research for Web Application
+﻿MIST-353: Prototype Development and Research for Web Application
  =============================================================================
  ![Nice Pic](https://valutrack.com/wp-content/uploads/2023/03/isa-cybersecurity-training-2-1.jpg)
 
@@ -39,9 +39,9 @@ For this assignment:
 > Based on my research, I found that traveling sites or even regualr e-commerce sites are a ton more reactive than they have ever been due to cshtml and JS. ALthough we are learning the basics, due to the adoption of web3 and new API's we are able to have more reactive sites than ever before, taking a 1/10th of the amount of work that it used to take to get similiar results. I have also realized that almost all websites styles look similar since we all use bootstrap to make our lives easier. This is what makes web design capable for people who dont know how to make custom CSS.
    - Future Enhancements
 
-> In the next phase of development I will be adding a page for every anchor on my site. I also will be adding more JS in order to have a more capable site. The biggest fail I had on this current iteration that will be different next time is the incosistency in style from "Home" to "ContactUs". I also will be adding in some backend API calls in order to prevent end users getting my API key. I also am now considerding what sql server I will be linking to my application and how I would accomplish that.
+> In the next phase of development I will be adding a page for every anchor on my site. I also will be adding more JS in order to have a more capable site. The biggest fail I had on this current iteration that will be different next time is the incosistency in style from "Home" to "ContactUs". I also will be adding in some backend API calls in order to achieve the most functionality for this prototype. I also am now considerding what sql server I will be linking to my application and how I would accomplish that.
 
-[**GeoSnow Web-App Proposal**](GeoSnowProposal.md)
+[**GeoSnow Web-App Prototype**](GeoSnowProposal.md)
 
 ## References
  **Citations**:
