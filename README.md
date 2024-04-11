@@ -1,4 +1,4 @@
-﻿MIST-353 Assignment 2: Prototype Development and Research for Web Application
+﻿MIST-353: Prototype Development and Research for Web Application
  =============================================================================
  ![Nice Pic](https://valutrack.com/wp-content/uploads/2023/03/isa-cybersecurity-training-2-1.jpg)
 
