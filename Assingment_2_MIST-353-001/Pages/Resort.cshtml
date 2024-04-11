@@ -199,17 +199,21 @@
         <button type="submit">Remove Post</button>
     </form>
     </div>
+    <!--
     <h3>Click the button to see new changes made</h3>
-
+    -->
     <!-- Refresh Button -->
+    <!--
     <button onclick="refreshPage()">Refresh Page</button>
-
+    -->
+    <!--
     <script>
         function refreshPage() {
             // Reloads the current page
             location.reload();
         }
     </script>
+    -->
     <!--
               - #FOOTER
             -->
@@ -398,7 +402,7 @@
     </script>
 
 
-
+<!--
 <script type="module">
     async function displayResortDetails(ResortID) {
         const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
@@ -444,6 +448,61 @@
 
     displayResortDetails('@ResortID');
 </script>
+-->
+
+    <script type="module">
+        async function displayResortDetails(ResortID) {
+            const response = await fetch(`https://localhost:7293/api/Resort/${ResortID}`);
+            const data = await response.json();
+            document.getElementById('ResortName').innerHTML = `<div class="resort-detail-name">${data.name}</div>`;
+            document.getElementById('ResortName').style.visibility = "visible";
+
+            document.getElementById('ResortAddress').innerHTML = `<div class="resort-detail-address">${data.address}, ${data.city}, ${data.state}, ${data.zipcode}, ${data.country}</div>`;
+            document.getElementById('ResortAddress').style.visibility = 'visible';
+
+            document.getElementById('ResortContact').innerHTML = `<div class="resort-detail-contact">${data.phone}, ${data.email}</div>`;
+            document.getElementById('ResortContact').style.visibility = 'visible';
+
+            await fetchForumPosts(ResortID);
+        }
+
+        async function fetchForumPosts(ResortID) {
+            const forumPostsResponse = await fetch(`https://localhost:7293/api/Forum/posts-by-resort/${ResortID}`);
+            const forumPosts = await forumPostsResponse.json();
+            const forumPostsContainer = document.getElementById('ForumPostsContainer');
+            forumPostsContainer.innerHTML = ''; // Clear existing posts
+            forumPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'forum-post'; // Add a class for styling
+                postElement.innerHTML = `
+                        <div class="forum-post-title"><h3>${post.title}</h3></div>
+                        <div class="forum-post-content"><p>${post.content}</p></div>
+                        <div class="forum-post-footer"><p>Posted by: ${post.posterName}</p></div>
+                    `;
+                forumPostsContainer.appendChild(postElement);
+            });
+        }
+
+        // Periodically fetch forum posts every 5 seconds
+        setInterval(() => {
+            const ResortID = document.getElementById('resortId').value;
+            fetchForumPosts(ResortID);
+        }, 5000);
+
+        displayResortDetails('@ResortID');
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
     <!--Newletter -->
     <script type="module">
         addLocationFormListen();
@@ -468,7 +527,7 @@
             }
         });
     </script>
-
+    <!--
     <script>
         document.getElementById('addPostForm').addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -502,6 +561,42 @@
     }
     });
     </script>
+    -->
+    <script>
+    document.getElementById('addPostForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const resortId = parseInt(document.getElementById('resortId').value, 10);
+    const posterName = document.getElementById('posterName').value;
+    const postTitle = document.getElementById('postTitle').value;
+    const postContent = document.getElementById('postContent').value;
+    console.log({ resortId, posterName, postTitle, postContent });
+    const success = await addForumPost(resortId, posterName, postTitle, postContent);
+    if (success) {
+    alert('Post added successfully');
+    displayResortDetails(resortId); // Refresh the forum posts list
+    this.reset(); // Clear the form
+    } else {
+    alert('Failed to add the post');
+    }
+    });
+    </script>
+    <script>
+        document.getElementById('removePostForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const postID = document.getElementById('postIdToRemove').value;
+            const success = await deleteForumPost(postID);
+            if (success) {
+                alert('Post removed successfully');
+                displayResortDetails('@ResortID'); // Refresh the forum posts list
+                this.reset(); // Clear the form
+            } else {
+                alert('Failed to remove the post');
+            }
+        });
+    </script>
+
+
+
 
     <script src="~/js/site.js" defer></script>
 
