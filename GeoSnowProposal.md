@@ -7,7 +7,7 @@
 - [This page acts as the home page, it will allow users to find out what we are all about and also jump straight into exploring]
 
 ### Features and Functionality:
-- [This page can grab the users current location so searching for results is made easier: uses API, "https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon={long}&format=json"
+- [This page can grab the users current location so searching for results is made easier: uses API, "/reverse?lat=${lat}&lon={long}&format=json"
 - [The user can also add themselves to the newsletter using the APIs "/api/Newsletter/add-subscriber" & "/api/Newsletter/check-subscription/{email}"]
 
 ## Page 2: [ContactUs] | Author: Jillian Fluharty
@@ -46,8 +46,8 @@
 
 ### Features and Functionality:
 - [This page will hold all of the resort information while showing a section containing all of the ForumPost for the respective resort]
-- [Users will have a range of things that they can do; blog, as well as have the option to Delete a post with correct permissions]
-- [This page will use the APIs, "/api/Resort/{resortID}", "/api/Forum/add-forum-post", "/api/Forum/delete-forum-post/{postID}",  and "/api/Forum/posts-by-resort/{resortID}"]
+- [Users will have a range of things that they can do; blog, check the weather for dates selected, as well as have the option to Delete a post with correct permissions]
+- [This page will use the APIs, "/api/Resort/{resortID}", "/api/Forum/add-forum-post", "/api/Forum/delete-forum-post/{postID}", "/${formattedStartDate}--${formattedEndDate}:PT1H/t_2m:F,precip_1h:mm,wind_speed_10m:ms/${latitude},${longitude}/json" and "/api/Forum/posts-by-resort/{resortID}"]
 
 ## Page 6: [RemoveSubscriber] | Author: Jillian Fluharty
 
