@@ -47,8 +47,38 @@
     --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02)
 }
 
+/*-----------------------------------*\
+  #WeatherData
+\*-----------------------------------*/
+#weatherDataContainer {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
 
+.weather-date {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
 
+    .weather-date h4 {
+        color: #555;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .weather-date p {
+        font-size: 14px;
+        margin: 4px 0;
+        line-height: 1.6;
+    }
 
 
 

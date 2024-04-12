@@ -30,6 +30,7 @@ function getLocation() {
 function showPosition(position) {
     document.getElementById("latTxt").value = position.coords.latitude;
     document.getElementById("longTxt").value = position.coords.longitude;
+    console.log("Geolocation Coordinates:", position.coords.latitude, position.coords.longitude);  // Log geolocation coordinates
     getAddress(position.coords.latitude, position.coords.longitude);
 }
 
@@ -61,6 +62,9 @@ function addLocationFormListen() {
         let endDate = document.getElementById('endDateInp').value;
         let radius = document.getElementById('radiusDrop').value;
 
+        console.log("Latitude:", latitude);  // Log latitude
+        console.log("Longitude:", longitude);  // Log longitude
+
         // Use previously fetched coordinates or fetch based on the user input.
         if (!latitude || !longitude) {
             let userInput = document.getElementById('locInp').value;
@@ -71,7 +75,9 @@ function addLocationFormListen() {
 
         // Construct the correct URL.
         const searchURL = `https://localhost:7113/Shared/SearchResults?latitude=${latitude}&longitude=${longitude}&startDate=${startDate}&endDate=${endDate}&radius=${radius}`;
-        window.open(searchURL, '_blank'); // Redirect to the constructed URL.
+        console.log("Search URL:", searchURL); 
+        window.open(searchURL, '_blank');// Redirect to the constructed URL.
+        window.location.reload(true);
       //window.location.href = searchURL;
     });
 }
@@ -84,6 +90,7 @@ async function getCoordinates(address) {
         if (data.length > 0) {
             document.getElementById('latTxt').value = data[0].lat;
             document.getElementById('longTxt').value = data[0].lon;
+            console.log("Fetched Coordinates:", data[0].lat, data[0].lon);  // Log fetched coordinates
         } else {
             alert("No results found for the given address.");
         }
@@ -92,11 +99,11 @@ async function getCoordinates(address) {
     }
 }
 
-//function displayCoordinates(coords) {
-//    document.getElementById('results').innerHTML = `Coordinates: ${coords.lat}, ${coords.lon}`;
-//    document.getElementById('latTxt').value = coords.lat;
-//   document.getElementById('longTxt').value = coords.lon;
-//}
+function displayCoordinates(coords) {
+    document.getElementById('results').innerHTML = `Coordinates: ${coords.lat}, ${coords.lon}`;
+    document.getElementById('latTxt').value = coords.lat;
+   document.getElementById('longTxt').value = coords.lon;
+}
 
 function showError(error) {
     switch (error.code) {
@@ -222,16 +229,16 @@ async function deleteForumPost(postID) {
    
     return response.ok;
 }
-
+/*
 async function fetchWeatherData(startDate, endDate, latitude, longitude) {
     // Ensure dates are in the correct format
     const formattedStartDate = new Date(startDate).toISOString();
     const formattedEndDate = new Date(endDate).toISOString();
     
-    console.log(`Fetching weather data for: ${startDate}, ${endDate}, ${latitude}, ${longitude}`);
+    /*    console.log(`Fetching weather data for: ${startDate}, ${endDate}, ${latitude}, ${longitude}`);*/
 
-
-    const url = `https://api.meteomatics.com/${formattedStartDate}--${formattedEndDate}:PT1H/t_2m:C/${latitude},${longitude}/html`;
+    /*
+    const url = `https://api.meteomatics.com/${formattedStartDate}--${formattedEndDate}:PT1H/t_2m:F/${latitude},${longitude}/html`;
     try {
         const response = await fetch(url, {
             headers: {
@@ -246,6 +253,52 @@ async function fetchWeatherData(startDate, endDate, latitude, longitude) {
     } catch (error) {
         console.error('Fetch Weather Data Error:', error);
         document.getElementById('weatherDataContainer').innerHTML = 'Error: free plan can only show current date and look ahead 10 days.';
+    }
+}
+*/
+async function fetchWeatherData(startDate, endDate, latitude, longitude) {
+    const formattedStartDate = new Date(startDate).toISOString();
+    const formattedEndDate = new Date(endDate).toISOString();
+    const url = `https://api.meteomatics.com/${formattedStartDate}--${formattedEndDate}:PT1H/t_2m:F,precip_1h:mm,wind_speed_10m:ms/${latitude},${longitude}/json`;
+    console.log("Requesting weather data from URL:", url);
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': 'Basic ' + btoa('westvirginiauniversity_jenkins_collin:O2Eus9gR5D')
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const weatherData = await response.json();
+        let htmlContent = '';
+
+        // Access each type of data: Temperature, Precipitation, Wind Speed
+        const temperatureData = weatherData.data.find(item => item.parameter === "t_2m:F").coordinates[0].dates;
+        const precipitationData = weatherData.data.find(item => item.parameter === "precip_1h:mm").coordinates[0].dates;
+        const windSpeedData = weatherData.data.find(item => item.parameter === "wind_speed_10m:ms").coordinates[0].dates;
+
+        // Assume each date's weather info is synchronized across parameters
+        temperatureData.forEach((entry, index) => {
+            const date = new Date(entry.date).toLocaleString();
+            const temperature = entry.value.toFixed(1);
+            const precipitation = precipitationData[index].value.toFixed(1);
+            const windSpeed = windSpeedData[index].value.toFixed(1);
+
+            htmlContent += `
+                <div class="weather-date">
+                    <h4>${date}</h4>
+                    <p>Temperature: ${temperature} °F</p>
+                    <p>Precipitation: ${precipitation} mm</p>
+                    <p>Wind Speed: ${windSpeed} m/s</p>
+                </div>
+            `;
+        });
+
+        document.getElementById('weatherDataContainer').innerHTML = htmlContent;
+    } catch (error) {
+        console.error('Fetch Weather Data Error:', error);
+        document.getElementById('weatherDataContainer').innerHTML = 'Error fetching weather data.';
     }
 }
 
