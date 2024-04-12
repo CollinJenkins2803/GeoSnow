@@ -310,6 +310,8 @@
             }
         });
     </script>
-
+    <script>
+        document.cookie = `searchParams=${encodeURIComponent(JSON.stringify(Object.fromEntries(new URLSearchParams(window.location.search).entries())))};path=/`;
+    </script>
 </body>
 </html>

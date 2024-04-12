@@ -199,6 +199,12 @@
         <button type="submit">Remove Post</button>
     </form>
     </div>
+
+    <div id="weatherDataContainer">
+        <h3>Weather Forecast</h3>
+        <!-- Weather data will be displayed here -->
+    </div>
+
     <!--
     <h3>Click the button to see new changes made</h3>
     -->
@@ -596,6 +602,20 @@
     </script>
 
 
+    <script type="module">
+        // Parse the URL and extract parameters
+        const searchParams = JSON.parse(decodeURIComponent(document.cookie.replace(/(?:(?:^|.*;\s*)searchParams\s*\=\s*([^;]*).*$)|^.*$/, "$1")));
+        const latitude = searchParams.latitude;
+        const longitude = searchParams.longitude;
+        const startDate = searchParams.startDate;
+        const endDate = searchParams.endDate;
+
+
+        // Call the weather API function with the extracted parameters
+        fetchWeatherData(startDate, endDate, latitude, longitude);
+
+        // Your existing JavaScript functions...
+    </script>
 
 
     <script src="~/js/site.js" defer></script>

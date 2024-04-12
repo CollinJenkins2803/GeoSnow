@@ -223,3 +223,30 @@ async function deleteForumPost(postID) {
     return response.ok;
 }
 
+async function fetchWeatherData(startDate, endDate, latitude, longitude) {
+    // Ensure dates are in the correct format
+    const formattedStartDate = new Date(startDate).toISOString();
+    const formattedEndDate = new Date(endDate).toISOString();
+    
+    console.log(`Fetching weather data for: ${startDate}, ${endDate}, ${latitude}, ${longitude}`);
+
+
+    const url = `https://api.meteomatics.com/${formattedStartDate}--${formattedEndDate}:PT1H/t_2m:C/${latitude},${longitude}/html`;
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': 'Basic ' + btoa('westvirginiauniversity_jenkins_collin:O2Eus9gR5D')
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.text();
+        document.getElementById('weatherDataContainer').innerHTML = data;
+    } catch (error) {
+        console.error('Fetch Weather Data Error:', error);
+        document.getElementById('weatherDataContainer').innerHTML = 'Error: free plan can only show current date and look ahead 10 days.';
+    }
+}
+
+
