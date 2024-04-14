@@ -15,14 +15,7 @@
 
 
 
-    <!--
-        - Background image
-      -->
-    <style>
-        body {
-            background-image: url(https://wallpaperaccess.com/full/133707.jpg);
-        }
-    </style>
+   
 
     <!--
       - google font link
@@ -37,7 +30,7 @@
         p {
             /* WVU Gold  */
             /*color: rgb(234, 170, 0);*/
-            font-family: 'Abril Fatface', cursive;
+            
         }
 
         /* Style for bottom headers using <h2> */
@@ -67,6 +60,29 @@
         }
 
     </style>
+    <style>
+        /* Basic reset */
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }</style>
 </head>
 <body>
     <!--
@@ -111,13 +127,13 @@
     -->
 
     <div class="footer-list">
-
-        <p class="footer-list-title">Remove yourself from our newsletter</p>
-
-        <p class="newsletter-text" style="color: hsl(0, 0%, 80%);">
+        <div class="container" id=".">
+        <p class="footer-list-title" style="color: rgb(234, 170, 0);">Remove yourself from our newsletter</p>
+        
+        <p class="newsletter-text" style="color: rgb(234, 170, 0);">
             We appreciate your business and respect your time!
         </p>
-
+        </div>
         <form method="post" asp-page-handler="RemoveSubscriber" class="newsletter-form">
             <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
             <button type="submit" class="btn btn-primary" style="background-color: rgb(234, 170, 0);">Unsubscribe</button>
