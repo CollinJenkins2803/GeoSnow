@@ -58,4 +58,5 @@
 - [Users will be brought to the RemoveSubscriber page and be prompted to enter their email.]
 - [Using the API, "/api/Newsletter/remove-subscriber"]
 - [Built in error detection saves users from wasting time removing an email that is not in our database]
+- [Only page that implements C# back-end API call]
 
