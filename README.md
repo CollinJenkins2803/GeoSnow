@@ -65,7 +65,7 @@ For this assignment:
 For API documentation check under MIST-353-002/GeoSnowAPI 
 
 ## Deployment Problems / Future Development Documentation
-> yup your screwed, goodluck
+> use stack ovverflow and chat-gpt, lol
 
 ## References
  **Citations**:
