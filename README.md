@@ -42,6 +42,8 @@ For this assignment:
 > In the next phase of development I will be adding a page for every anchor on my site. I also will be adding more JS in order to have a more capable site. The biggest fail I had on this current iteration that will be different next time is the incosistency in style from "Home" to "ContactUs". I also will be adding in some backend API calls in order to achieve the most functionality for this prototype. I also am now considerding what sql server I will be linking to my application and how I would accomplish that.
 
 [**GeoSnow Web-App Prototype**](GeoSnowProposal.md)
+## GeoSnow SQL Database
+[**Database**](https://github.com/CollinJenkins0/MIST-353-001_GeoSnow.git)
 
 ## References
  **Citations**:
