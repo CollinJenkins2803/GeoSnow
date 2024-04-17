@@ -62,7 +62,7 @@ For this assignment:
 ## GeoSnow SQL Database
 [**Database**](https://github.com/CollinJenkins0/MIST-353-001_GeoSnow.git)
 
-For API documentation check under MIST-353-002/GeoSnowAPI 
+For further API documentation check under MIST-353-002/GeoSnowAPI 
 
 ## Deployment Problems / Future Development Documentation
 > use stack ovverflow and chat-gpt, goodluck lol
