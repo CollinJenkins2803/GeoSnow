@@ -27,6 +27,65 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="GeoSnowDatabase\.git\COMMIT_EDITMSG" />
+	  <None Include="GeoSnowDatabase\.git\config" />
+	  <None Include="GeoSnowDatabase\.git\description" />
+	  <None Include="GeoSnowDatabase\.git\FETCH_HEAD" />
+	  <None Include="GeoSnowDatabase\.git\HEAD" />
+	  <None Include="GeoSnowDatabase\.git\hooks\applypatch-msg.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\commit-msg.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\fsmonitor-watchman.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\post-update.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-applypatch.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-commit.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-merge-commit.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-push.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-rebase.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\pre-receive.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\prepare-commit-msg.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\push-to-checkout.sample" />
+	  <None Include="GeoSnowDatabase\.git\hooks\update.sample" />
+	  <None Include="GeoSnowDatabase\.git\index" />
+	  <None Include="GeoSnowDatabase\.git\info\exclude" />
+	  <None Include="GeoSnowDatabase\.git\logs\HEAD" />
+	  <None Include="GeoSnowDatabase\.git\logs\refs\heads\main" />
+	  <None Include="GeoSnowDatabase\.git\logs\refs\remotes\origin\HEAD" />
+	  <None Include="GeoSnowDatabase\.git\logs\refs\remotes\origin\main" />
+	  <None Include="GeoSnowDatabase\.git\objects\00\9b3226e83a2b073527e731512faa9af6674ab3" />
+	  <None Include="GeoSnowDatabase\.git\objects\0b\f985d4e84ca560418f9a418bb8d78e810413b0" />
+	  <None Include="GeoSnowDatabase\.git\objects\10\64b0c2d9abb32dae6eec656681c76f26094839" />
+	  <None Include="GeoSnowDatabase\.git\objects\11\0678960ffcc6685d92c841d064f26d341ce7f8" />
+	  <None Include="GeoSnowDatabase\.git\objects\19\22a4381104ed49091a19b34d3247184af8e00e" />
+	  <None Include="GeoSnowDatabase\.git\objects\2c\c9e6de9e0dcfef4e2b37b72a9b462f5c73c7a0" />
+	  <None Include="GeoSnowDatabase\.git\objects\36\4e02358df2d98cb59e690bed2b4a49e44e9974" />
+	  <None Include="GeoSnowDatabase\.git\objects\5b\17e3be5b737128da61e186d3a5ce170e68d347" />
+	  <None Include="GeoSnowDatabase\.git\objects\61\ee26b363d12dfeedf379c7b7c56caeff435225" />
+	  <None Include="GeoSnowDatabase\.git\objects\65\b9e894f64ca2c63dcbf9f63cbbabbed9c16a2e" />
+	  <None Include="GeoSnowDatabase\.git\objects\66\41f56945027d6fd62bab84a8f30ef8ddf060ac" />
+	  <None Include="GeoSnowDatabase\.git\objects\67\47530588817cf0470d4b00b2f0ae405c5ac1fb" />
+	  <None Include="GeoSnowDatabase\.git\objects\74\6cde62ff8ca7de668837c82b180d1c650aa07f" />
+	  <None Include="GeoSnowDatabase\.git\objects\7d\fb2d243c8f5069d7bc53ddb990a4c0fa43c347" />
+	  <None Include="GeoSnowDatabase\.git\objects\80\bbae9ec14c82ede2183cb338467b872cfc5c64" />
+	  <None Include="GeoSnowDatabase\.git\objects\81\d35235cf4d6fbea9cdb0027425c26f0f00c0e8" />
+	  <None Include="GeoSnowDatabase\.git\objects\86\a2e81090d070045c122259ddf39fca27cced71" />
+	  <None Include="GeoSnowDatabase\.git\objects\88\f146cd61fb7d81ebe213f28a0e9b281d7c15d2" />
+	  <None Include="GeoSnowDatabase\.git\objects\99\0871b8a61051f803bb5d7e1d16feb198f48eab" />
+	  <None Include="GeoSnowDatabase\.git\objects\a1\5b58af9c5d9bfac214605864f0fcebcc2ada35" />
+	  <None Include="GeoSnowDatabase\.git\objects\a6\02a8187263234bf9085ac411b0a7fa8dc11141" />
+	  <None Include="GeoSnowDatabase\.git\objects\a6\5069d6d96966fa7bf1b4e9e079a220a0232700" />
+	  <None Include="GeoSnowDatabase\.git\objects\bd\48267d285027ba661cecbb5b55ec4f8f64df16" />
+	  <None Include="GeoSnowDatabase\.git\objects\bf\6077c59327b1530e7d529e020b96b229b9f993" />
+	  <None Include="GeoSnowDatabase\.git\objects\d2\9a819765b446870c483b34e7dd9a259be16416" />
+	  <None Include="GeoSnowDatabase\.git\objects\df\e0770424b2a19faf507a501ebfc23be8f54e7b" />
+	  <None Include="GeoSnowDatabase\.git\objects\ef\95f67113b42cf998d4ea12a0a3a58b1023b96e" />
+	  <None Include="GeoSnowDatabase\.git\objects\f4\24294f3fed7736583550a275e430121ef00cde" />
+	  <None Include="GeoSnowDatabase\.git\objects\f8\ec49553f2b6cc6d9004a620f9208681e95d045" />
+	  <None Include="GeoSnowDatabase\.git\ORIG_HEAD" />
+	  <None Include="GeoSnowDatabase\.git\refs\heads\main" />
+	  <None Include="GeoSnowDatabase\.git\refs\remotes\origin\HEAD" />
+	  <None Include="GeoSnowDatabase\.git\refs\remotes\origin\main" />
+	</ItemGroup>
+	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.3" />
 	  <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.3" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
@@ -38,6 +97,11 @@
 	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
 	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="GeoSnowDatabase\.git\objects\info\" />
+	  <Folder Include="GeoSnowDatabase\.git\objects\pack\" />
+	  <Folder Include="GeoSnowDatabase\.git\refs\tags\" />
 	</ItemGroup>
 
 </Project>
