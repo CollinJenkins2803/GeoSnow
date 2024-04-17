@@ -29,21 +29,43 @@ For this assignment:
   
    - Project Summary
 
-> Have you ever wanted to find the mountain with the most snow in the area? Or have you ever been a victim of a rainy snow/ski trip? That is no more! GeoSnow is the first weather guided e-commerce traveling site. Allowing users to find the resorts they love on the days they know will bring the best results. At this phase my site is a rudementary starting point to what it could potentially be in the future. As of right now my searchbar is non-functional as well as my other anchors. Everything that can be clicked will one day be fully functional.
+> Have you ever wanted to find the mountain with the most snow in the area? Or have you ever been a victim of a rainy snow/ski trip? That is no more! GeoSnow is the first weather guided e-commerce traveling site. Allowing users to find the resorts they love on the days they know will bring the best results. At this phase my site is a rudementary starting point to what it could potentially be in the future. 
      
    - Page Descriptions
 
-> As of current; I have a "Home" page and a "ContactUs" page. The home page has my header, hero, searchbar, about, and footer. My ContactUs page consist of the same header and footer but as well as a bootstrap 5 table consisting of 2 rows. It contains the First, Last, and email of the current employees at GeoSnow Inc. I also have custom CSS that is displaying the WVU brand RGB in order to give my site a more professional look. I have only included some simple JS to my navbar which allows it to be used when the screen size is small enough. The only other JS I have so far is my searchbar which I used the class lectures code in order to construct.
+> As of current; I have 6 pages. The home page is where users can jump right into searching for resorts, or in our footer they can add themselves to our newsletter. Once a user searches a location to book a resort, they are redirected to our search results page. This is where they can see the list of resorts within the radius they selected. From here when users select a resort they want to look into further, they are redirected to our resort details page. This is where they can see all of the resort information, also on the page is the live-chat forum. This is where users can add a post and with the correct authorization delete a post. Below this is the Weather by the hour, presented by the NOAA API. This information effectively allows users to navigate to resorts that have availabilty, make comments, delete them, as well as having the option to add tehmselves to a newsletter. If a user choices they no longer want to be a part of our newsletter, they can use the quick link in our footer that redirects to our remove subscriber page. Form here they can enter in the email that they would like to remove and if it is in our database it will be removed. If a user has any questions about the use of their personal information they can use one of the quick links to navigate to our terms & conditons page. This is where they will find all of the relevant information pertaining to how their data is used and stored. If a user has any further questions, they can use either the contact us button at the end of the privacy notice or select the contact us quick link in the footer. This is our last page as of currently that displays all of our teams personal contact infomation incase anyone needs to communicate with the devs.
    - Research Overview
 
-> Based on my research, I found that traveling sites or even regualr e-commerce sites are a ton more reactive than they have ever been due to cshtml and JS. ALthough we are learning the basics, due to the adoption of web3 and new API's we are able to have more reactive sites than ever before, taking a 1/10th of the amount of work that it used to take to get similiar results. I have also realized that almost all websites styles look similar since we all use bootstrap to make our lives easier. This is what makes web design capable for people who dont know how to make custom CSS.
+> Based on my research, I found that traveling sites or even regualr e-commerce sites are a ton more reactive than they have ever been due to cshtml, css, and JS. ALthough we are learning the basics, due to the adoption of web3 and API's we are able to have more reactive sites than ever before, taking a 1/10th of the amount of work that it used to take to get similiar results. I have also realized that almost all websites styles look similar since we all use bootstrap to make our lives easier. This is what makes web design faster for people who dont know how to make custom CSS.
    - Future Enhancements
 
-> In the next phase of development I will be adding a page for every anchor on my site. I also will be adding more JS in order to have a more capable site. The biggest fail I had on this current iteration that will be different next time is the incosistency in style from "Home" to "ContactUs". I also will be adding in some backend API calls in order to achieve the most functionality for this prototype. I also am now considerding what sql server I will be linking to my application and how I would accomplish that.
+> In the next phase of development I will be scaffolding Identity into my project in order to intialize the Identity Framework. This allows authorization between certain pages within the app. With this completed I will be able to finish the checkout and reservation pages needed in order to facilitate a fully functional booking site.
 
 [**GeoSnow Web-App Prototype**](GeoSnowProposal.md)
+## Deployment Guide
+   - 1st steps
+> Clone this repo
+
+> Clone the repo linked under GeoSnow SQL Database
+   - 2nd Steps (Assumning you have Server SQL Managment already installed)
+> Open DatabaseCreation.sql in Server SQL and execute it along with all other .sql files
+
+   - 3rd Steps
+> Open configuration files and change the connection url's to local host
+
+> In order to get database connection to frontend, proper configuration is needed
+   - 4th Step
+> Once all connections are established, its time to run, debug, and take off from where we left
+
+
+
 ## GeoSnow SQL Database
 [**Database**](https://github.com/CollinJenkins0/MIST-353-001_GeoSnow.git)
+
+For API documentation check under MIST-353-002/GeoSnowAPI 
+
+## Deployment Problems / Future Development Documentation
+> yup your screwed, goodluck
 
 ## References
  **Citations**:
