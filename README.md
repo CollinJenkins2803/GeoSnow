@@ -1,4 +1,4 @@
-﻿MIST-353: Prototype Development and Research for Web Application
+ASP.NET: Prototype Development and Research for Web Application
  =============================================================================
  ![Nice Pic](/Assingment_2_MIST-353-001/wwwroot/Logo.png)
 
