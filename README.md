@@ -65,7 +65,9 @@ For this assignment:
 For further API documentation check under MIST-353-002/GeoSnowAPI 
 
 ## Deployment Problems / Future Development Documentation
-> use stack overflow and chat-gpt, goodluck lol
+> Debug locally and head to our Contact Us page. This is where you can find our direct contact information.
+>
+> We encourage future development teams to contact us if they have any questions or issues!
 
 ## References
  **Citations**:
