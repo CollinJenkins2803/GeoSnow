@@ -93,6 +93,8 @@ For further API documentation check under MIST-353-002/GeoSnowAPI
 >https://github.com/codewithsadee/tourest: Custom CSS that I altered in order to use WVU brand RGB 
 >
 >https://openai.com/chatgpt: used to help customize css for Searchbar; "make custom css to make my Searchbar 18px and explain what each element does to the style"
+>
+>https://openai.com/chatgpt: used to create logo for GeoSnow Prototype Logo and Favicon; "create a new cool logo for my company Geo Snow: make sure to use the name in the logo"
 
  **Reflection on Resources**:
  > I believe that the use of generative AI and other resources that help write code can be very useful, and also very hurtful. When using AI in order to learn, it is very helpful, but when its used to cheat and disregard work, that is when it gets hurtful. As the AI does everything, the user has zero clue what is actually going on and when it comes to real life, the concepts copied wont be able to be reproduced. I personally struggled when it came to trying to make my custom CSS and that is when Chat-GPT was useful as it explained what each element did to the style and broke it down step by step for me. I found great help in [w3schools](https://www.w3schools.com/bootstrap5/index.php) as they teach you line by line how to implement whatever function you need. All in all, finding the things I needed to incorporate into my project was very straight forward and easy.
